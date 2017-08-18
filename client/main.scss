@@ -1,0 +1,93 @@
+@import "{}/node_modules/bootstrap/scss/bootstrap.scss";
+@import "{}/node_modules/bootstrap/scss/_navbar.scss";
+@import "./imports/app/colors.scss";
+
+html, body {
+  height: 100%;
+}
+ 
+body {
+  background-color: $color1;
+  font-family: 'Muli', sans-serif;
+
+  a {
+  	color: $color3;
+  }
+
+  a:hover {
+		color: $color4;
+	}
+}
+
+.full-width { 
+	width: 100vw;
+}
+
+.home {
+	.mast {
+		background-color: transparent;
+	}
+		
+	.tagline {
+		display: block !important;
+		width: 22rem;
+	  height: 5rem;
+		background: url(/img/tagline.png) no-repeat;
+		-webkit-background-size: contain;
+	  -moz-background-size: contain;
+	  -o-background-size: contain;
+	  background-size: contain;
+	  margin-left: -34% !important;
+	  bottom: 4rem;
+	  right: 1rem;
+	}
+}
+
+.mast {
+	background-color: $color4;
+	margin-bottom: 1rem;
+
+	.navbar {
+		padding-bottom: .5rem !important;
+	}
+
+	@media (min-width: 992px) {
+		.title {
+			display: none;
+		}
+	}
+}
+
+available-form {
+	float: left;
+	width: 100%;
+
+  .form-inline label {
+  	justify-content: flex-start;
+  }
+	
+	.form-inline {
+	  display: block;
+
+	  .form-control {
+	  	width: 100%;
+	  }
+	}
+}
+
+.btn-outline-success {
+	color: $color4;
+	border-color: $color4;
+}
+
+.links .form-control {
+  margin-bottom: .5rem;
+}
+
+login-buttons .dropdown-toggle::after {
+	display: none;
+}
+
+.login-buttons .content-container {
+	left: -230px !important;
+}

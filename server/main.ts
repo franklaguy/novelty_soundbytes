@@ -1,4 +1,10 @@
-import { Main } from "./imports/server-main/main";
+import { Meteor } from 'meteor/meteor';
+import { loadAvailable } from '/server/imports/fixtures/available';
+import './imports/publications/available';
+import './imports/publications/users';
+import '/both/methods/available.methods';
+import './imports/publications/images';
 
-const mainInstance = new Main();
-mainInstance.start();
+Meteor.startup(() => {
+	loadAvailable();
+});

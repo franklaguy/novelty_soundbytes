@@ -1,0 +1,141 @@
+@import "../colors";
+
+.home {
+	background-color: $color4;
+	width: 100%;
+	color: $color1;
+
+	.nav-container {
+		border-bottom: 1px solid #fff;
+		background-color: $color4;
+		background: url(/img/bg.png) no-repeat center center;
+		-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  text-align: center;
+
+		h5 {
+			text-align: center;
+			width: 100%;
+			margin-top: 100px;
+		}
+	}
+
+	button {
+		margin: 20px auto;
+		background-color: transparent;
+		border: 2px solid #000;
+		color: $color1;
+		cursor: pointer;
+
+		img {
+			vertical-align: top;
+		}
+	}
+
+	button:hover {
+    color: $color1;
+    background-color: $color4;
+    border-color: $color1;
+    cursor: pointer;
+  }
+
+	.btn-outline-success {
+		color: $color1 !important;
+		border-color: $color1 !important;
+	}
+
+	.content {
+		.content {
+			overflow: hidden;
+			display: table;
+
+			img {
+				vertical-align: top;
+			}
+
+			.list-group {
+				width: 33%;
+			}
+
+			.list-group-item {
+				background-color: transparent;
+				font-size: .9rem;
+			}
+		}
+
+		div {
+			width: 100%;
+			padding-bottom: 1rem;
+			padding-top: .5rem;
+
+			span {
+				display: flex;
+		    justify-content: flex-start
+			}
+		}
+	}
+
+	.synopsis {
+		background-color: $color2;
+	}
+
+	.order {
+		background-color: $color1;
+
+		.content {
+			text-align: center;
+		}
+	}
+
+	.author {
+		border-bottom: 1px solid #fff;
+    margin-bottom: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.home {
+
+		.nav-container {
+
+			h5 {
+				text-align: center;
+				width: 100%;
+				margin-top: 230px;
+			}
+		}
+	}
+
+	.home {
+		.content {
+
+			div {
+				padding-top: 1rem;
+				padding-bottom: 0;
+
+				span {
+			    margin-bottom: 2rem;
+				}
+			}
+
+			.list-group-item {
+				margin: auto;
+			}
+		}
+	}
+}
+
+
+
+/* Landscape */
+@media (min-width: 414px) 
+  and (max-width: 736px) { 
+
+  .home {
+  	.tagline {
+  		margin-top: -13rem;
+  	}
+  }
+}

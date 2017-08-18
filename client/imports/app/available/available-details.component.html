@@ -1,0 +1,69 @@
+<div class="container-fluid mast">
+	<div class="row">
+		<div class="col-md-12">
+			<custom-nav></custom-nav>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+	  	<header *ngIf="availableModel">
+				<h2>{{availableModel.name}}</h2>
+				<p>{{availableModel.description}}</p>
+				<p  *ngIf="availableModel.name == 'Novelty Soundbytes';">
+					Contact <a href="mailto:team@sixstrangetales.com?Subject=I%20would%20like%20to%20order%20Six%20Strange%20Tales%20using%20Venmo" target="_top">team@sixstrangetales.com</a> now to pay with Venmo
+				</p>
+			</header>
+			<hr />
+		</div>
+	</div>
+	<div class="row">
+	  <div class="col-md-12">
+			<h5 *ngIf="isOwner || isPublic">View and Edit Book Details:</h5>
+	  	<form class="form-horizontal" *ngIf="availableModel" (submit)="saveDetails()">
+	  		<div class="form-group">
+					<label>Update Name</label>
+					<input type="text" [(ngModel)]="availableModel.name" name="name" [disabled]="!isOwner" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Update Description</label>
+					<input type="text" [(ngModel)]="availableModel.description" name="description" [disabled]="!isOwner" class="form-control">
+				</div>
+				<div class="form-group links">
+					<label>Update Links</label>
+					<input type="text" [(ngModel)]="availableModel.links.digital" name="digital" [disabled]="!isOwner" class="form-control" placeholder="Update link">
+					<input type="text" [(ngModel)]="availableModel.links.paperback" name="paperback" [disabled]="!isOwner" class="form-control" placeholder="Update link">
+					<input type="text" [(ngModel)]="availableModel.links.hardcover" name="hardcover" [disabled]="!isOwner" class="form-control" placeholder="Update link">
+				</div>
+				<div class="form-group">
+					<label>Update Reviews Link</label>
+					<input type="text" [(ngModel)]="availableModel.reviews" name="reviews" [disabled]="!isOwner" class="form-control" placeholder="Update reviews link">
+				</div>
+				<div class="form-group">
+					<button type="submit" [disabled]="!isOwner">Save</button> 
+					<a [routerLink]="['/']">Cancel</a>
+				</div>
+			</form>
+			<hr />
+	  </div>
+	</div>
+	<ul class="list-group" *ngIf="isOwner || isPublic">
+		<li class="list-group-item">
+			<ul class="list-group">
+				<p>Users to invite</p>
+				<li  *ngFor="let user of users | async">
+					<p>{{user | displayName}}</p>
+					<button (click)="invite(user)" class="btn btn-primary btn-sm">Invite</button>
+					<div *ngIf="isInvited">
+						 <h2>Reply to Invitation</h2>
+						 <input class="btn btn-primary" type="button" value="I'm in!" (click)="reply('yes')">
+						 <input class="btn btn-warning" type="button" value="Maybe" (click)="reply('maybe')">
+						 <input class="btn btn-danger" type="button" value="No" (click)="reply('no')">
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<footer></footer>

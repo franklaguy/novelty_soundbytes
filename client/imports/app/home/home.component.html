@@ -1,0 +1,107 @@
+<div class="container-fluid home">
+	<div class="row nav-container">
+		<div class="col-md-12">
+			<custom-nav></custom-nav>
+			<h5>How well do you know your friends?</h5>
+			<button class="btn btn-outline-success" (click)="openPage('/list')">
+				<span>
+					<img src="/img/buy-icon-32.png" width="20" height="20" />
+				</span>
+				&nbsp;BUY NOW 
+			</button>
+		</div>
+	</div>
+	<div class="row content">
+		<div class="col-md-12">	
+			<div class="content">
+				<h3>
+					<span>
+						Introduction &nbsp;
+						<a [routerLink]="['/introduction/']">
+							<img src="/img/reading.png" width="30" height="30"/>
+						</a>
+					</span>
+				</h3>
+				<hr />
+				<p>Six Strange Tales is a complex and intertwined series of stories intricately woven around the fates of a small community of characters. Quentin Tarantino and Vincent Gallo come to mind as the plot twists and turns through alternating time periods in the lives of these anti-heroes, sadists, monsters and villains. This book may be the best noir literary work published in recent history. </p>
+				<p>Author, Individual Eleven, actually had these nightmares, wrote them down at dusk, elaborated and shared them with all of us. The book touches on subject matter such as gore and violence, mystery, sex, purgatory, the dangers of drug abuse and even... </p>
+				<p>...read more >> &nbsp;&nbsp; 
+					<a [routerLink]="['/introduction/']">
+							<img src="/img/reading.png" width="30" height="30"/>
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="row content synopsis">
+		<div class="col-md-12">	
+			<div class="content">
+				<h3>
+					<span>
+						Synopsis &nbsp;
+						<a [routerLink]="['/synopsis/']">
+							<img src="/img/reading.png" width="30" height="30"/>
+						</a>
+					</span>
+				</h3>
+				<hr />
+				<ul class="list-group pull-left">
+					<li class="list-group-item">
+						chapter 1 &nbsp;&nbsp;
+						<a href="https://youtu.be/96AYeCDQlHE" target="_blank">
+							<img src="/img/aquicon-youtube-icon-0.png" width="50" height="50" />
+						</a>
+					</li>
+				</ul>
+				<ul class="list-group pull-left">
+					<li class="list-group-item">
+						chapter 2 &nbsp;&nbsp;
+						<a href="https://www.youtube.com/watch?v=MvZrLtm5O5c" target="_blank">
+							<img src="/img/aquicon-youtube-icon-0.png" width="50" height="50" />
+						</a>
+					</li>
+				</ul>
+				<ul class="list-group pull-left">
+					<li class="list-group-item">
+						chapter 3 &nbsp;&nbsp;
+						<a href="https://youtu.be/96AYeCDQlHE" target="_blank">
+							<img src="/img/aquicon-youtube-icon-0.png" width="50" height="50" />
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row content order">
+		<div class="col-md-12">	
+			<div class="content">
+				<a [routerLink]="['/list/']">
+							<img src="/img/available-now1.JPG" width="300" height="300"/>
+						</a>
+			</div>
+		</div>
+	</div>
+	<div class="row content author">
+		<div class="col-md-12">	
+			<div class="content">
+				<h3>
+					<span>
+						Author &nbsp;
+						<a [routerLink]="['/about-the-author/']">
+							<img src="/img/reading.png" width="30" height="30"/>
+						</a>
+					</span>
+				</h3>
+				<hr />
+				<p>Individual Eleven is a rare breed of author. This work was created when he decided that he would write down his bad dreams at night. Through that process he concocted some of the darkest stories driven by the depths and inner demons of one human mind.</p>
+				<p>Actually, Indie got his start as a musician later transitioning into the world of film and television producing what he calls artistic renditions of other peoples greed. Writing has been an off and on love affair, which eventually... </p>
+				<p>...read more >> &nbsp;&nbsp; 
+					<a [routerLink]="['/about-the-author/']">
+							<img src="/img/reading.png" width="30" height="30"/>
+					</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<footer></footer>
+</div>

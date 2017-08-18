@@ -1,0 +1,16 @@
+<form [formGroup]="addForm" (ngSubmit)="addAvailable(); upload.reset();" class="form-inline">
+	<fieldset class="form-group">
+		<available-upload #upload (onFile)="onImage($event)"></available-upload>
+		<input class="form-control" type="text" formControlName="name" placeholder="Add Sellers name" />
+		<textarea class="form-control" type="text" formControlName="description" placeholder="Add Description of sale type"></textarea>
+		<input class="form-control" type="text" formControlName="digital" placeholder="Add Link to Digital format" />
+		<input class="form-control" type="text" formControlName="paperback" placeholder="Add Link to Paperback format"  />
+		<input class="form-control" type="text" formControlName="hardcover" placeholder="Add Link to Hardcover format"  />
+		<input class="form-control" type="text" formControlName="reviews" placeholder="Add Link to Reviews"  />
+		<div class="checkbox">
+      <label>Public</label>
+			<input type="checkbox" formControlName="public" />
+		</div>
+		<button type="submit" [disabled]="!addForm.valid">Add</button>
+	</fieldset>
+</form>

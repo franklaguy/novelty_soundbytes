@@ -1,0 +1,39 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded pull-left">
+	<div class="container-fluid">
+		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="title pull-right"></div>
+		<div class="collapse navbar-collapse" [collapse]="isCollapsed">
+	    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+	      <li class="nav-item">
+	        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/introduction/']">Introduction <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/synopsis/']">Synopsis <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a [routerLinkActive]="['active']" class="nav-link" [routerLink]="['/about-the-author/']">About the Author <span class="sr-only">(current)</span></a>
+	      </li>
+	      <!-- <li class="nav-item"> TODO: Add actual merchandise
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/merchandise']">Merchandise <span class="sr-only">(current)</span></a>
+	      </li> -->
+	      <li class="nav-item">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/list/']">Buy 6ST Now</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/contact/']">Contact <span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+
+	    <span id="search" class="form-inline my-2 my-lg-0">
+				<input #searchtext class="form-control pull-right" type="text" placeholder="Search available sellers">
+	      <button class="btn btn-outline-success pull-right" type="button" (click)="search(searchtext.value)">Search</button>
+	    </span>
+	    
+	  </div>
+	</div>
+</nav>

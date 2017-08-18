@@ -1,11 +1,12 @@
-import "angular2-meteor-polyfills";
-
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { enableProdMode } from "@angular/core";
-import { AppModule } from "./imports/app";
-
-enableProdMode();
+import 'angular2-meteor-polyfills';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './imports/app/app.module';
+import '/both/methods/available.methods';
 
 Meteor.startup(() => {
-   platformBrowserDynamic().bootstrapModule(AppModule);
+	const platform = platformBrowserDynamic();
+
+	enableProdMode();
+	platform.bootstrapModule(AppModule);
 });

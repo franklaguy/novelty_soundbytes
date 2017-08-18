@@ -1,0 +1,98 @@
+<div class="container-fluid mast">
+  <div class="row">
+    <div class="col-md-12">
+      <custom-nav></custom-nav>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h5>
+        <a href="https://www.barnesandnoble.com/w/six-strange-tales-individual-eleven/1107867933?ean=9781538025369" target="_blank">
+          <img src="/img/buy-icon-32.png" width="40" height="40" />
+        </a>
+        Paperback Available NOW!!
+      </h5>
+      <p>Also available on 
+        <a href="https://www.barnesandnoble.com/w/six-strange-tales-individual-eleven/1107867933?ean=2940013454415#productInfoTabs" target="_blank">
+          Nook
+        </a> and 
+        <a href="https://www.amazon.com/Six-Strange-Tales-Individual-Eleven-ebook/dp/B006GRZ0D8/ref=sr_1_3?s=books&ie=UTF8&qid=1497910145&sr=1-3&keywords=six+strange+tales" target="_blank">
+          Kindle
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <span id="search" class="form-inline my-2 my-lg-0">
+        <input class="form-control pull-left"  type="text" #searchtext placeholder="Search available sellers">
+        <button class="btn btn-outline-success pull-left" type="button" (click)="search(searchtext.value)">Search</button>
+      </span>
+      <div class="row full-width">
+        <div class="col-sm-8">
+          <select #sort (change)="changeSortOrder(sort.value)">
+            <option value="1" selected>Sort A-Z</option>
+            <option value="-1">Sort Z-A</option>
+          </select>
+        </div>
+      </div>
+    </li>
+  </ul> 
+
+  <ul class="list-group">
+    <li class="list-group-item">
+      <available-form class="test" [hidden]="!user"></available-form>
+    </li>
+  </ul> 
+  <ul class="list-group">
+    <li *ngFor="let at of available | async" class="list-group-item">
+      <div class="row full-width">
+        <div class="col-sm-8">
+          <div class="col-sm-8 close pull-right">
+            <button class="btn btn-danger pull-right" (click)="removeAvailable(at)" [hidden]="!isOwner(at)">
+              <i class="fa fa-times"></i>
+            </button>
+          </div>
+          <img *ngIf="at.images && at.images.length > 0" class="available-main-image" [src]="at | displayMainImage" />
+          <span *ngIf="at.name == 'Novelty Soundbytes';">
+            <!-- <login-buttons class="pull-right"></login-buttons> -->
+          </span>
+          <h5 class="ma-available-name">
+            <a [hidden]="!user" [routerLink]="['/details/', at._id]">{{ at.name }}</a>
+            <span *ngIf="!user">{{ at.name }}</span>
+          </h5>
+          <p class="ma-available-description">{{ at.description }}</p>
+          <p>
+            <span *ngIf="at.links.digital">
+              <a href="{{ at.links.digital }}" target="_blank">Digital</a>  |
+            </span>
+            <span *ngIf="at.links.paperback;">
+              <span *ngIf="at.name == 'Novelty Soundbytes';">
+                <a [routerLink]="['/details/', at._id]">Paperback</a> | {{ at.links.paperback }} |
+              </span>
+              <span *ngIf="at.name != 'Novelty Soundbytes';">
+                <a href="{{ at.links.paperback }}" target="_blank">Paperback</a>  |
+              </span>
+            </span>
+            <span *ngIf="at.links.hardcover">
+              <a href="{{ at.links.hardcover }}" target="_blank">Hardcover</a>
+            </span>
+            <span><a href="{{ at.reviews }}" target="_blank">Reviews</a></span>
+          </p>
+          <ul class="list-group">
+            <li class="list-group-item">YES: {{at | rsvp:'yes'}} | NO: {{at | rsvp:'no'}} | MAYBE: {{at | rsvp:'maybe'}}</li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="row">
+    <div class="col-md-12 pagination">
+      <pagination-controls (pageChange)="onPageChanged($event)"></pagination-controls>
+    </div>
+  </div>
+</div>
+<footer></footer>

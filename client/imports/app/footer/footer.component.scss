@@ -1,0 +1,33 @@
+@import "../colors";
+
+.footer {
+	width: 100%;
+	position: relative;
+  bottom: .5rem;
+
+
+	div {
+		margin: 0 0 0 33%;
+	}
+}
+
+.tagline {
+	display: none;
+}
+
+@media (min-width: 992px) {
+	.footer {
+		div {
+			margin: 0 0 0 43%;
+		}
+	}
+}
+
+/* Landscape */
+@media (min-width: 414px) 
+  and (max-width: 736px) { 
+
+  .footer {
+  	
+  }
+}
