@@ -13,13 +13,13 @@ export class DisplayNamePipe implements PipeTransform {
 			return '';
 		}
 
-		if (user.username) {
-			return user.username;
-		}
+		// if (user.username) {
+		// 	return user.username;
+		// }
 
-		if (user.emails) {
-			return user.emails[0].address;
-		}
+		// if (user.emails) {
+		// 	return user.emails[0].address;
+		// }
 
 		return '';
 

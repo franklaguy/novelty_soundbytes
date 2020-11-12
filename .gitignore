@@ -5,3 +5,5 @@ typings
 .idea
 build
 dist
+bsliran/
+.DS_Store

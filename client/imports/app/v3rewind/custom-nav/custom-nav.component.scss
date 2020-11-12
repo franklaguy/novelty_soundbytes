@@ -1,0 +1,319 @@
+@import "{}/client/imports/app/colors.scss";
+@import "{}/client/imports/app/fonts.scss";
+
+.v3rewind.navbar {
+	background-color: transparent; 
+	padding-left: 0;
+	padding-bottom: .1rem;
+
+	button {
+		background-color: transparent;
+	}
+
+	.container-fluid {
+		padding-left: 0;
+	}
+
+	a.nav-link.pl-0:nth-child(1) {
+		padding-left: 3.3rem !important;
+		margin-top: -.4rem;
+	}
+
+	a.nav-link {
+		color: $color1 !important;
+	  background: url(/img/icon-nsb.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+    padding-left: 3.3rem;
+	}
+
+	a.nav-link:hover {
+	  color: $color4 !important;
+	  background: url(/img/icon-nsb-6st.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+	}
+
+	a.read {
+		background: url(/img/icon-reading-invert.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+		padding-left: 3.3rem;
+	}
+
+	a.visuals {
+		background: url(/img/icon-eyeglasses.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+		padding-left: 3.3rem;
+	}
+
+	a.music {
+		background: url(/img/icon-music.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+		padding-left: 3.3rem;
+	}
+
+	a.buy-invert {
+		background: url(/img/icon-buy-invert.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+		padding-left: 3.3rem;
+	}
+
+	a.instagram {
+		background: url(/img/social/instagram.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+		padding-left: 3.3rem;
+	}
+
+	a.nav-link.active {
+		color: $color4 !important;
+	}
+
+	a.visuals.active {
+		color: $color5 !important;
+	}
+
+	a.visuals.active:hover {
+		color: $color5 !important;
+		background: url(/img/icon-eyeglasses.png) no-repeat;
+	  background-size: 1.9rem 1.9rem;
+    background-position: 1rem;
+	}
+
+	.form-control {
+		color: $color4;
+	}
+
+	.title {
+		width: 15rem;
+    height: 4rem;
+		background: url(/img/title.png) no-repeat;
+		-webkit-background-size: contain;
+	  -moz-background-size: contain;
+	  -o-background-size: contain;
+	  background-size: contain;
+	  margin-left:10px;
+	}
+
+	.btn-outline-success {
+		color: $color4;
+		border-color: $color4;
+	}
+
+	span#search {
+	  width: 100%;
+	  margin-left: 1rem;
+
+		.form-control, button {
+			padding: 0.2rem 0.75rem;
+			margin-bottom: -.1rem;
+			background-color: #fff;
+			color: dimgrey;
+			border-color: dimgrey;
+		}
+
+	  .form-control {
+	    width: 70%;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+	  }
+
+	  button {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+	  button:hover {
+	    color: $color1;
+	    background-color: $color4;
+	    border-color: $color4;
+	    cursor: pointer;
+	  }
+	}
+}
+
+.v3rewind.navbar-toggleable-md {
+	flex-direction: row;
+	text-align: left;
+
+
+	ul.navbar-nav {
+		width: 100%;
+	}
+
+	.navbar-nav .nav-link {
+		padding-left: 3.3rem;
+		padding-right: 1rem ;
+	}
+
+	.navbar-collapse {
+		background: #000 url(/img/v3rewind/rubar-mic-stretch.png) no-repeat center center;
+		background-size: contain;
+		position: absolute;
+		z-index: 1;
+		width: 21.6rem;
+		padding-left: 1rem;
+		box-shadow: 0 3px 20px black, inset 0 0 7px white;
+		border-radius: 5px;
+		z-index: 3;
+	}
+
+	a.nav-link.no-hover:hover {
+	  color: $nsb-light !important;
+	  background: url(/img/icon-nsb-light.png) no-repeat;
+	  background-size: 1.6rem 1.6rem;
+    background-position: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+
+	.v3rewind.navbar-toggleable-md {
+		width: 100%;
+		padding-right: 0;
+		padding-top: 0;
+		padding-bottom: 20rem !important;
+
+		.container-fluid {
+			width: 100%;
+			padding-right: 0;
+		}
+
+		ul.navbar-nav {
+			width: 70%;
+		}
+
+		a.nav-link {
+			background-image: none;
+		}
+
+		a.nav-link.pl-0:nth-child(1) {
+			padding-left: 0 !important;
+			margin-top: 0;
+		}
+
+		a.nav-link:hover {
+		  color: $color4 !important;
+		  background: url(/img/icon-nsb-6st.png) no-repeat;
+		  background-size: 1.6rem 1.6rem;
+	    background-position: 1rem;
+		}
+
+		a.nav-link.no-hover:hover {
+		  color: $nsb-light !important;
+		  background: none;
+		}
+
+		a.read {
+			background: url(/img/icon-reading-invert.png) no-repeat;
+		  background-size: 1.6rem 1.6rem;
+	    background-position: 1rem;
+			padding-left: 3rem;
+		}
+
+		a.visuals {
+			background: url(/img/icon-eyeglasses.png) no-repeat;
+		  background-size: 1.6rem 1.6rem;
+	    background-position: 1rem;
+			padding-left: 3rem;
+		}
+
+		a.music {
+			background: url(/img/icon-music.png) no-repeat;
+		  background-size: 1.6rem 1.6rem;
+	    background-position: 1rem;
+			padding-left: 3rem;
+		}
+
+		a:no-hover {
+			background: none;
+		}
+
+		a.buy-invert,
+		a.instagram {
+			display: none;
+		}
+
+		span#search {
+			width: 30%;
+			display: inline-block;
+
+		  .form-control {
+		    width: 70%;
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				border-top-right-radius: 1rem;
+				border-bottom-right-radius: 1rem;
+		  }
+
+		  button {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+				border-top-left-radius: 1rem;
+				border-bottom-left-radius: 1rem;
+			}
+		}
+
+		.title {
+			position: absolute;
+			width: 33rem;
+			height: 8rem;
+			top: 4rem;
+			left: 27%;
+		}
+
+		.navbar-collapse {
+			background: none;
+			border-bottom: none;
+			width: 100%;
+			box-shadow: none;
+		}
+	}
+}
+
+@media (min-width: 400px) {
+	.v3rewind.navbar-toggleable-md {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+@media (min-width: 600px) {
+	.v3rewind.navbar-toggleable-md {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+}
+
+@media (min-width: 750px) {
+	.v3rewind.navbar {
+		a.nav-link.pl-0:nth-child(1) {
+			margin-top: .1rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.v3rewind.navbar-toggleable-md {
+		padding-top: 0;
+		padding-bottom: 20rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.v3rewind.navbar-toggleable-md {
+		padding-top: 0;
+		padding-bottom: 23rem;
+	}
+}
+
+@media (min-width: 1900px) {
+	.v3rewind.navbar-toggleable-md {
+		padding-top: 0;
+		padding-bottom: 23rem;
+	}
+}

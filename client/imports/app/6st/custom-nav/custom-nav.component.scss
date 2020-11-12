@@ -1,0 +1,129 @@
+@import "{}/client/imports/app/colors.scss";
+@import "{}/client/imports/app/fonts.scss";
+
+.six-strange-tales-nav.navbar {
+	background-color: transparent; 
+	padding-left: 0;
+	padding-bottom: 1rem;
+
+	button {
+		background-color: #fff
+	}
+
+	.container-fluid {
+		padding-left: 0;
+	}
+
+	a.nav-link {
+		color: $color1 !important;
+	}
+
+	a.nav-link:hover{
+	  color: $color3 !important;
+	}
+
+	a.nav-link.active {
+		color: $color3 !important;
+	}
+
+	.form-control {
+		color: $color4;
+	}
+
+	.title {
+		width: 15rem;
+    height: 4rem;
+		background: url(/img/nsb/scenes/6st/title.png) no-repeat;
+		-webkit-background-size: contain;
+	  -moz-background-size: contain;
+	  -o-background-size: contain;
+	  background-size: contain;
+	  margin-left:10px;
+	}
+
+	.btn-outline-success {
+		color: $color4;
+		border-color: $color4;
+	}
+
+	span#search {
+	  width: 100%;
+
+	  .form-control {
+	    width: 70%;
+	  }
+
+	  button:hover {
+	    color: $color1;
+	    background-color: $color4;
+	    border-color: $color1;
+	    cursor: pointer;
+	  }
+	}
+}
+
+.six-strange-tales-nav.navbar-toggleable-md {
+	flex-direction: row;
+	text-align: left;
+
+	ul.navbar-nav {
+		width: 100%;
+	}
+
+	.navbar-nav .nav-link {
+		padding-left: 0;
+		padding-right: 1rem ;
+	}
+
+	.navbar-collapse {
+		border-bottom: 1px solid $color1;
+	}
+
+	a.nav-link.no-hover:hover {
+	  color: $nsb-light !important;
+	}
+}
+
+@media (min-width: 992px) {
+
+	.six-strange-tales-nav.navbar-toggleable-md {
+		width: 100%;
+		padding-right: 0;
+		padding-top: .5rem;
+		border-bottom: none;
+
+		.container-fluid {
+			width: 100%;
+			padding-right: 0;
+		}
+
+		ul.navbar-nav {
+			width: 70%;
+		}
+
+		span#search {
+			width: 30%;
+			display: inline-block;
+		}
+
+		.title {
+			position: absolute;
+			width: 33rem;
+			height: 8rem;
+			top: 4rem;
+			left: 27%;
+		}
+
+		.navbar-collapse {
+			border-bottom: none;
+
+			a.nav-link:hover {
+			  background: none;
+			}
+		}
+	}
+
+	.six-strange-tales-common.mast .navbar-toggleable-md .navbar-collapse {
+		margin-top: 4rem !important;
+	}
+}

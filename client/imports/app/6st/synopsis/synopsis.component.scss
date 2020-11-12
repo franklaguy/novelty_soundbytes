@@ -1,0 +1,22 @@
+@import '../../colors';
+
+.mast {
+		background-color: $color4;
+		background: url(/img/6st/bg.png) no-repeat center center;
+		-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+}
+
+.synopsis {
+	h1, h5, p {
+		color: $color2;
+	}
+}
+
+@media (max-width: 992px) {
+	h1 img {
+		display: none;
+	}
+}

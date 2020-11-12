@@ -1,16 +1,38 @@
 <form [formGroup]="addForm" (ngSubmit)="addAvailable(); upload.reset();" class="form-inline">
 	<fieldset class="form-group">
-		<available-upload #upload (onFile)="onImage($event)"></available-upload>
-		<input class="form-control" type="text" formControlName="name" placeholder="Add Sellers name" />
-		<textarea class="form-control" type="text" formControlName="description" placeholder="Add Description of sale type"></textarea>
-		<input class="form-control" type="text" formControlName="digital" placeholder="Add Link to Digital format" />
-		<input class="form-control" type="text" formControlName="paperback" placeholder="Add Link to Paperback format"  />
-		<input class="form-control" type="text" formControlName="hardcover" placeholder="Add Link to Hardcover format"  />
-		<input class="form-control" type="text" formControlName="reviews" placeholder="Add Link to Reviews"  />
-		<div class="checkbox">
-      <label>Public</label>
-			<input type="checkbox" formControlName="public" />
-		</div>
-		<button type="submit" [disabled]="!addForm.valid">Add</button>
+		<available-upload class="w-100 text-center" #upload (onFile)="onImage($event)"></available-upload>
+		<input class="form-control w-50" type="text" formControlName="name" placeholder="Add item name" />
+		<textarea class="form-control" type="text" formControlName="description" placeholder="Add item description"></textarea>
+		<input class="form-control" type="text" formControlName="credit" placeholder="Credits" />
+		<p class="txt-black d-block w-100 pb-2 pt-4">Add Item Links</p>
+		<ul formGroupName="links" class="d-table w-100">
+			<li class="form-group w-50 d-inline-block pr-2" formGroupName="digital">
+				<input class="form-control links" type="text" formControlName="seller" placeholder="Digital Seller" />
+				<input class="form-control links" type="text" formControlName="link" placeholder="Digital Link" />
+			</li>
+			<li class="form-group w-50 d-inline-block" formGroupName="other">
+				<input class="form-control links" type="text" formControlName="seller" placeholder="Other Seller" />
+				<input class="form-control links" type="text" formControlName="link" placeholder="Link" />
+			</li>
+			<li class="form-group w-50 d-inline-block pr-2" formGroupName="other2">
+				<input class="form-control links" type="text" formControlName="seller" placeholder="Other" />
+				<input class="form-control links" type="text" formControlName="link" placeholder="Link" />
+			</li>
+			<li class="form-group w-50 d-inline-block" formGroupName="other3">
+				<input class="form-control links" type="text" formControlName="seller" placeholder="Other" />
+				<input class="form-control links" type="text" formControlName="link" placeholder="Link" />
+			</li>
+		</ul>
+		<ul class="w-100">
+			<li class="column1 pull-left w-25">
+				<div class="checkbox">
+		      <label>Public</label>
+					<input type="checkbox" formControlName="public" />
+				</div>
+			</li>
+			<li class="pull-right w-75">
+				<button class="btn btn-info pull-right" type="submit" [disabled]="!addForm.valid">{{uploadItem}}</button>
+			</li>
+		</ul>
 	</fieldset>
 </form>

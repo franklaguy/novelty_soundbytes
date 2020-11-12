@@ -1,7 +1,9 @@
 {
   "galaxy.meteor.com": { 
      "env": { 
-       "ROOT_URL": "http://www.sixstrangetales.COM", "MONGO_URL": "mongodb://user:alston3375@ds139242.mlab.com:39242/nsb" 
+       "ROOT_URL": "http://www.noveltysoundbytes.COM", 
+       "MONGO_URL": "mongodb+srv://frankleegitnit:alston3375@nsb-cluster.cidrq.mongodb.net/nsb?retryWrites=true&w=majority" 
      } 
    }
 }
+

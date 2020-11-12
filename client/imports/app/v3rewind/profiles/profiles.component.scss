@@ -1,0 +1,102 @@
+@import "{}/client/imports/app/colors.scss";
+@import "{}/client/imports/app/fonts.scss";
+
+// Set Profiles - backgrounds
+.profiles {
+	height: 13rem;
+	width: 100%;
+	padding: 0;
+	background-color: $color2;
+	position: relative;
+	overflow: hidden;
+
+	li::selection {
+	  background: transparent; /* WebKit/Blink Browsers */
+	}
+
+	li::before {
+		content: "  ";
+	}
+
+  li {
+  	display: inline-block;
+  	list-style: none;
+  	z-index: 1;
+
+  	.wrapper {
+  		width: 4000% !important;
+  		height: 12.8rem;
+  		overflow: hidden;
+  		position: absolute;
+  		top: .5rem;
+  		left: 0;
+  		padding-top: 0  !important;
+
+  		div:nth-child(1) {
+  			margin-left: 2.5rem;
+  		}
+
+  		div {
+  			width: 19rem !important;
+  			display: inline-block;
+  			vertical-align: top;
+  			padding-top: .5rem !important;
+
+		  	img {
+			  	height: 12rem;
+			  	position: absolute;
+		  	}
+
+		  	img.active {
+		  		border: 3px solid $color1;
+		  		border-radius: 5px;
+		  	}
+
+		  	p {
+		  		position: relative;
+		  		text-shadow: 2px 2px $color4;
+		  		padding-top: 10rem;
+		  	}
+  		}
+  	}
+  }
+
+	.next, .prev {
+		height: 100%;
+		width: 2.5rem;
+		padding-top: 3.5rem;
+		padding-bottom: 6rem;
+		background-color: $color5;
+		opacity: .8;
+		color: $color2;
+		text-align: center;
+		vertical-align: bottom;
+		position: relative;
+		font-size: 50px;
+		z-index: 2;
+	}
+
+	.prev.brick1 { display: none; }
+	.next.brick40 { display: none; }
+}
+
+.descriptions {
+	display: none;
+	height: 20rem;
+
+	p {
+		line-height: 1.2rem;
+	}
+
+	h3::selection {
+	  background: transparent; /* WebKit/Blink Browsers */
+	}
+
+	p::selection {
+	  background: transparent; /* WebKit/Blink Browsers */
+	}
+}
+
+.descriptions.active {
+	display: block;
+}

@@ -1,40 +1,18 @@
-.file-uploading {
-  opacity: 0.3;
-}
+@import "../colors";
+@import "../fonts";
+@import "../backgrounds";
  
-.file-is-over {
-  opacity: 0.7;
-}
- 
-.availavle-update-container {
-  width: 90%;
-  margin: 15px;
- 
-  .thumbs {
-    margin-top: 10px;
-    margin-bottom: 10px;
- 
-    .clear {
-      clear: both;
-    }
- 
-    .thumb {
-      float: left;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      margin-right: 5px;
- 
-      img {
-        flex-shrink: 0;
-        min-width: 100%;
-        min-height: 100%
-      }
-    }
+ul.available-update-container {
+  padding: 1rem 0 0;
+
+  li.drop-image {
+    width: 80%;
+    color: $color5;
   }
+
+  .file-uploading { opacity: 0.3; }
+  .file-is-over { opacity: 0.7; }
+  
 }
  
 [filedrop] {

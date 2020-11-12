@@ -1,3 +1,35 @@
+@import "../colors";
+@import "../fonts";
+@import "../backgrounds";
+
 form input, form textarea {
 	margin-bottom: 1rem;
+}
+
+form {
+	ul {
+		padding: 0;
+
+		li {
+			width: 100%;
+
+			.links {
+				width: 48%;
+				display: inline-block;
+			}
+
+			.links:nth-child(1) {
+				margin-right: 2%;
+			}
+		}
+	}
+}
+
+.form-inline label {
+	display: inline-block;
+}
+
+p, label { 
+	color: $color2; 
+	margin-bottom: 0;
 }

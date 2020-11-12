@@ -2,54 +2,137 @@
 	<div class="row nav-container">
 		<div class="col-md-12">
 			<custom-nav></custom-nav>
-			<h5>How well do you know your friends?</h5>
-			<button class="btn btn-outline-success" (click)="openPage('/list')">
-				<span>
-					<img src="/img/buy-icon-32.png" width="20" height="20" />
-				</span>
-				&nbsp;BUY NOW 
-			</button>
 		</div>
 	</div>
-	<div class="row content">
+	<div class="row content bg-black">
 		<div class="col-md-12">	
-			<div class="content">
-				<h3>
-					<span>
-						Introduction &nbsp;
-						<a [routerLink]="['/introduction/']">
-							<img src="/img/reading.png" width="30" height="30"/>
-						</a>
-					</span>
-				</h3>
-				<hr />
-				<p>Six Strange Tales is a complex and intertwined series of stories intricately woven around the fates of a small community of characters. Quentin Tarantino and Vincent Gallo come to mind as the plot twists and turns through alternating time periods in the lives of these anti-heroes, sadists, monsters and villains. This book may be the best noir literary work published in recent history. </p>
-				<p>Author, Individual Eleven, actually had these nightmares, wrote them down at dusk, elaborated and shared them with all of us. The book touches on subject matter such as gore and violence, mystery, sex, purgatory, the dangers of drug abuse and even... </p>
-				<p>...read more >> &nbsp;&nbsp; 
-					<a [routerLink]="['/introduction/']">
-							<img src="/img/reading.png" width="30" height="30"/>
-					</a>
-				</p>
+			<social></social>
+		</div>
+	</div>
+
+	<div class="row content bg-black pt-2">
+		<div class="col-md-12 pl-0 pt-0 pb-3">	
+			<div class="content pt-0">
+				<div class="latest pull-left">
+					<h3>a Documentary Film</h3>
+				</div>
+				<div class="pull-right text-right max-30 pl-2 pt-1">
+					<img src="/img/icon-eyeglasses.png" width="30" height="30"/>
+				</div>
+				<ul class="featured text-center">
+					<li>
+						<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/472053215?title=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/472053215">WERD - Dr. Martin Luther King</a> from <a href="https://vimeo.com/individualeleven">Individual Eleven</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="row content synopsis">
+
+	<div class="row content">
 		<div class="col-md-12">	
-			<div class="content">
-				<h3>
-					<span>
-						Synopsis &nbsp;
-						<a [routerLink]="['/synopsis/']">
-							<img src="/img/reading.png" width="30" height="30"/>
-						</a>
-					</span>
-				</h3>
-				<hr />
+			<gallery></gallery>
+		</div>
+	</div>
+	<div class="row content bg-black pt-0">
+		<div class="col-md-12 pl-0 pt-0">	
+			<div class="content pt-0">
+				<div class="latest pull-left">
+					<h3>Tribeca-Grand</h3>
+				</div>
+				<div class="pull-right text-right max-30 pl-2 pt-1">
+					<img src="/img/icon-eyeglasses.png" width="30" height="30"/>
+				</div>
+				<ul class="featured">
+					<li>
+						<iframe *ngIf="!youTube" width="auto" height="auto" [src]="embed[0].youTube" frameborder="0" allowfullscreen></iframe>
+						<img *ngIf="youTube" class="cursor" (click)="youTube = !youTube" src="/img/nsb/youTube-tg-home.png" width="300" alt="Play Video" />
+					</li>
+					<li>
+						<h2>TRIBECA-GRAND on ShowOff Radio with Statik Selektah Shade 45</h2>
+						<p>Tribeca-Grand song 'NY-PHI' - #1 on the college charts</p>
+						<p class="footnote">footage courtesy of nSb</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row content pl-2 bg-white pt-0">
+		<div class="col-md-12 pr-0 pt-0">	
+			<div class="content pt-0">
+				<div class="available-now pull-right">
+					<h3 class="pr-3">Available NOW</h3>
+				</div>
+				<div class="pull-left max-30 pt-2 pl-1">
+					<img src="/img/icon-eyeglasses-invert.png" width="30" height="30"/> 
+					<a href="https://www.bestbuy.com/site/verseatility-iii-rewind-dvd/34088759.p?skuId=34088759&ref=212&loc=1&gclid=CjwKCAjwmufZBRBJEiwAPJ3LpuLCs-AAyuuHqAmBWZrRCXZgV8DZp7zOKkUWbEVISTzKI3SabHKMFBoC_JAQAvD_BwE&gclsrc=aw.ds" target="_blank">
+						<img src="/img/icon-buy.png" width="30" height="30"/>
+					</a>
+				</div>
+				<ul class="featured pl-0">
+					<li><iframe src="https://player.vimeo.com/video/120215293" width="350" height="219" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></li>
+					<li class="pl-2 pr-3 pt-2 max-60">
+						<h2>
+							<a href="/v3rewind/">
+								VerseAtility III: Rewind available NOW!!
+							</a>
+						</h2>
+						<p class="txt-black">A documentary-style moving magazine featuring Stretch Armstrong &amp; Bobbito, Jean Grae, Chad Hugo of the Neptunes, Breeze Evahflowin, Jurrasic 5, HorrorCity and much more...
+						</p>
+						<p class="footnote text-muted">...from the archives of Frequency Magazine</p>
+						<p class="text-left pt-1">
+							<a [routerLink]="['/v3rewind/']">
+								<img src="/img/icon-eyeglasses-invert.png" width="30" height="30"/> more info
+							</a>
+							&nbsp;&nbsp;
+							<a href="https://www.bestbuy.com/site/verseatility-iii-rewind-dvd/34088759.p?skuId=34088759&ref=212&loc=1&gclid=CjwKCAjwmufZBRBJEiwAPJ3LpuLCs-AAyuuHqAmBWZrRCXZgV8DZp7zOKkUWbEVISTzKI3SabHKMFBoC_JAQAvD_BwE&gclsrc=aw.ds" target="_blank">
+								<img src="/img/icon-buy.png" width="30" height="30"/> stream now
+							</a>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row content text-center bg-black pt-0">
+		<div class="col-md-12 pl-0 pt-0">	
+			<div class="content pt-0">
+				<div class="latest pull-left pb-2 pl-4">
+					<img src="/img/icon-reading.png" width="30" height="30"/>
+					<a [routerLink]="['/list/']">
+						<img src="/img/icon-buy.png" width="30" />
+					</a>
+				</div>
+				<ul class="featured pl-0">
+					<li class="pull-left">
+						<div class="pull-left pl-4 pt-1 pb-1">
+							<a [routerLink]="['/six-strange-tales/']">
+								<img src="/img/nsb/scenes/6st/6st-Postcards-front.png" width="350" />
+							</a>
+						</div>
+					</li>
+					<li class="pl-2 pr-3 max-60 pull-left">
+						<div class="text-left pl-4">
+							<h2>How well do you know your friends?</h2>
+							<p>Have you ever wondered who your closest friends really are, where they come from, what type of backgrounds they may be hiding from you and the rest of the world. Meet Tammy, her 'Indestuctible' brothers Ant and Tibbs, Neicy her best friend and their other acquaintances as their horrifying truths unfold.</p>
+							<p class="text-left pt-3">
+								<a [routerLink]="['/six-strange-tales/synopsis/']">
+									<img src="/img/icon-reading-invert.png" width="30" height="30"/>
+									Synopsis
+								</a> &nbsp;
+								<a [routerLink]="['/list/']">
+									<img src="/img/icon-buy-invert.png" width="30" height="30"/>
+									Buy Now
+								</a>
+							</p>
+						</div>
+					</li>
+				</ul>
 				<ul class="list-group pull-left">
 					<li class="list-group-item">
 						chapter 1 &nbsp;&nbsp;
 						<a href="https://youtu.be/96AYeCDQlHE" target="_blank">
-							<img src="/img/aquicon-youtube-icon-0.png" width="50" height="50" />
+							<img src="/img/social/aquicon-youtube-icon-0.png" width="50" height="50" />
 						</a>
 					</li>
 				</ul>
@@ -57,7 +140,7 @@
 					<li class="list-group-item">
 						chapter 2 &nbsp;&nbsp;
 						<a href="https://www.youtube.com/watch?v=MvZrLtm5O5c" target="_blank">
-							<img src="/img/aquicon-youtube-icon-0.png" width="50" height="50" />
+							<img src="/img/social/aquicon-youtube-icon-0.png" width="50" height="50" />
 						</a>
 					</li>
 				</ul>
@@ -65,43 +148,38 @@
 					<li class="list-group-item">
 						chapter 3 &nbsp;&nbsp;
 						<a href="https://youtu.be/96AYeCDQlHE" target="_blank">
-							<img src="/img/aquicon-youtube-icon-0.png" width="50" height="50" />
+							<img src="/img/social/aquicon-youtube-icon-0.png" width="50" height="50" />
 						</a>
 					</li>
 				</ul>
 			</div>
+			<img class="text-center" src="/img/nsb/scenes/6st/tagline.png" width="352" />
 		</div>
 	</div>
-	<div class="row content order">
-		<div class="col-md-12">	
-			<div class="content">
-				<a [routerLink]="['/list/']">
-							<img src="/img/available-now1.JPG" width="300" height="300"/>
+	<div class="row content bg-white pl-2 pt-0">
+		<div class="col-md-12 pt-0 pr-0">	
+			<div class="content pr-0 pt-0">
+				<div class="available-now pull-right pr-0">
+					<h3 class="pr-3">Who We Are?</h3>
+				</div>
+				<div class="pull-left max-30 pt-2 pl-2">
+					<img src="/img/icon-reading.png" width="30" height="30"/>
+					<img src="/img/icon-nsb-invert.png" width="30" height="30"/>
+				</div>
+				<div class="pull-left">
+					<p class="tag pt-1 pl-2"><b>Rebuilding Inspiration through Innovation</b></p>
+					<p class="txt-black pl-2 pb-2"><b>NOVELTY SOUNDBYTES Inc</b>, incorporated March 2020, provides a growing catalog of products and services. NSB works in the area’s of technology, multi-media and gaming. Our main focus is solutions services, that is, analyzing businesses and offering solutions to propel you to your next level of success.</p>
+					<p class="txt-black pl-2">Recently we have decided to increase social and public awareness of our high quality work and the NSB logo. Where ever you see the NSB Logo expect the highest quality.</p>
+					<div class="text-center"><img src="/img/nsb/logo-nsb.png" width="300"/></div>
+					<p class="text-left pt-3 pl-2 pb-2">
+						<a class="txt-black more-dark" [routerLink]="['/who-we-are/']">
+							<img src="/img/icon-reading.png" width="30" height="30"/>
+							more info
 						</a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row content author">
-		<div class="col-md-12">	
-			<div class="content">
-				<h3>
-					<span>
-						Author &nbsp;
-						<a [routerLink]="['/about-the-author/']">
-							<img src="/img/reading.png" width="30" height="30"/>
-						</a>
-					</span>
-				</h3>
-				<hr />
-				<p>Individual Eleven is a rare breed of author. This work was created when he decided that he would write down his bad dreams at night. Through that process he concocted some of the darkest stories driven by the depths and inner demons of one human mind.</p>
-				<p>Actually, Indie got his start as a musician later transitioning into the world of film and television producing what he calls artistic renditions of other peoples greed. Writing has been an off and on love affair, which eventually... </p>
-				<p>...read more >> &nbsp;&nbsp; 
-					<a [routerLink]="['/about-the-author/']">
-							<img src="/img/reading.png" width="30" height="30"/>
-					</a>
-				</p>
-			</div>
-		</div>
-	</div>
-	<footer></footer>
 </div>
+<footer></footer>

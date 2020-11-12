@@ -13,29 +13,35 @@ import { Users } from '/both/collections/users.collection';
 import { User } from '/both/models/user.model';
 import { CanActivate } from '@angular/router'; // POC: currently not using
 import template from './available-details.component.html';
-import style from './available-list.component.scss';
+// import style from './available-list.component.scss';
 
 @Component({
 	selector: 'available-details',
-	template,
-  styles: [ style ]
+	// template,
+	templateUrl: require('./available-details.component.html').default,
+  // styles: [ './available-list.component.scss' ]
 })
 
 @InjectUser('user')
 export class AvailableDetailsComponent implements OnInit, OnDestroy {
 	detailsId: string;
+	save: string;
 	paramsSub: Subscription;
 	availableModel: AvailableModel;
 	detailsSub: Subscription;
 	users: Observable<User>;
 	uninvitedSub: Subscription;
 	user: Meteor.User;
+	imagesSubs: Subscription;
 
 	constructor(
 		private route: ActivatedRoute
 	) {}
 
 	ngOnInit() {
+		this.imagesSubs = MeteorObservable.subscribe('images').subscribe();
+		this.save = "Save";
+
 		this.paramsSub = this.route.params
 			.map(params => params['detailsId'])
 			.subscribe(detailsId => {
@@ -78,14 +84,20 @@ export class AvailableDetailsComponent implements OnInit, OnDestroy {
 			alert('Please log in to update this available item');
 		}
 
+		this.save = "...Saving";
+
 		Available.update(this.availableModel._id, {
 			$set: {
+				images: this.availableModel.images,
 				name: this.availableModel.name,
 				description: this.availableModel.description,
+				credit: this.availableModel.credit,
 				links: this.availableModel.links,
 				'public': this.availableModel.public
 			}
 		});
+
+		this.save = "Saved";
 	}
 
 	invite(user: Meteor.User) {
@@ -102,6 +114,14 @@ export class AvailableDetailsComponent implements OnInit, OnDestroy {
 		}, (error) => {
 			alert(`Failed to reply due to ${error}`);
 		});
+	}
+
+	onImage(imageId: string) {
+		this.availableModel.images.push(imageId);
+	}
+
+	deleteImage(imageId: string) {
+		this.availableModel.images.splice( this.availableModel.images.indexOf(imageId), 1 );
 	}
 
 	get isOwner(): boolean {
@@ -126,6 +146,7 @@ export class AvailableDetailsComponent implements OnInit, OnDestroy {
 		this.paramsSub.unsubscribe();
 		this.detailsSub.unsubscribe();
 		this.uninvitedSub.unsubscribe();
+		this.imagesSubs.unsubscribe();
 	}
 	
 }

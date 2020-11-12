@@ -1,0 +1,67 @@
+.wvoe {
+	.nav-container {
+		background: url(img/wvoe/banner-2048x1152.jpg) no-repeat center center;
+		background-size: cover;
+
+		a {
+			color: $nsb-light;
+
+			&.visuals {
+				background: url(/img/icon-eyeglasses-invert.png) no-repeat;
+			  background-size: 1.9rem 1.9rem;
+		    background-position: 1rem;
+				padding-left: 3.3rem;
+			}
+
+			&.read {
+				background: url(/img/icon-reading.png) no-repeat;
+			  background-size: 1.9rem 1.9rem;
+		    background-position: 1rem;
+				padding-left: 3.3rem;
+			}
+		}
+	}
+
+	ul.formats li {
+		padding-right: 1rem;
+
+		&::before {
+			content: "\272D" !important;
+		}
+	}
+
+	#blurb, #blurb h1, #blurb h3, #blurb p {
+		color: $color2;
+		margin-bottom: 0;
+	}
+
+	#wvoemapid { 
+		height: 23rem; 
+		width: 75%;
+		margin: 2rem auto;
+	}
+}
+
+@media (min-width: 900px) {
+	.wvoe {
+		.navbar-toggleable-md {
+		    padding-top: 12rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.wvoe {
+		.navbar-toggleable-md .navbar-collapse  {
+		    margin-top: 3.3rem;
+		}
+
+		.navbar a.nav-link {
+			color: $color2 !important;
+
+			&:hover {
+				color: $nsb-light !important;
+			}
+		}
+	}
+}

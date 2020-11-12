@@ -1,0 +1,145 @@
+@import '../../colors';
+@import '../../fonts';
+@import '../../backgrounds';
+
+.media-view .nav-container, .rewind {
+	border-bottom: 1px solid #fff;
+	background-color: $color4;
+	background: url(/img/v3rewind/bg-v3.png) no-repeat center center;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+
+  .navbar-toggleable-md {
+  	padding-bottom: 20rem;
+	  padding-top: 0;
+  }
+
+  .v3-logo {
+  	padding-top: .7rem;
+  	margin-right: 4.3rem;
+  	padding-bottom: .7rem;
+  }
+}
+
+.media-view .navbar a.nav-link.active,
+.media-view .navbar a.nav-link:hover {
+	color: $color4 !important;
+}
+
+button, .read-more {
+	cursor: pointer;
+}
+
+button:hover {
+	color: $color3;
+}
+
+.featured {
+	width: 95%;
+}
+
+ul.cards { 
+	padding-left: 0;
+	padding-bottom: 2rem;
+}
+
+ul.cards li {
+	width: 23rem;
+	height: 28rem;
+	margin-top: 2rem;
+	margin-right: 1rem;
+	box-shadow: 0 0 7px $color5;
+	text-align: left;
+	background-color: $color1;
+	color: $color2;
+	overflow: hidden;
+	border-radius: 5px;
+	position: relative;
+
+	img {
+		width: 23rem;
+		padding-bottom: .25rem;
+	}
+
+	.youtube-card, .play-video {
+		position: absolute;
+		top: 0;
+		width: 23rem;
+		height: 23rem;
+		cursor: pointer;
+	}
+
+	.youtube-card {
+		width: 100%;
+	}
+
+	p {
+		padding-left: .5rem;
+		margin-bottom: 0;
+		display: block;
+		line-height: 1.1rem;
+		color: $color2;
+	}
+
+	p.secondary {
+		font-size: .9rem;
+		color: $grey;;
+	}
+
+	div {
+		padding-left: .5rem;
+		padding-top: .5rem;
+		width: 95%;
+	}
+}
+
+li::before {
+	content: "  " !important;
+	padding-right: 0 !important;
+}
+
+@media (min-width: 992px) {
+	.media-view .nav-container {
+		.v3-logo {
+			position: absolute;
+	    left: 17rem;
+	    top: 3rem;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	ul.cards li { 
+		width: 21.5rem;
+
+		img {
+			width: 21.5rem;
+		}
+
+		.youtube-card, .play-video {
+			height: 21.2rem;
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	ul.cards li { 
+		width: 18.2rem;
+		height: 23rem;
+
+		img {
+			width: 18.2rem;
+		}
+
+		.youtube-card, .play-video {
+			height: 18rem;
+		}
+
+		.play-video {
+			margin-left: -2rem;
+		}
+	}
+}

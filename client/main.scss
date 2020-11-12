@@ -1,14 +1,44 @@
 @import "{}/node_modules/bootstrap/scss/bootstrap.scss";
 @import "{}/node_modules/bootstrap/scss/_navbar.scss";
+@import "{}/client/imports/app/colors.scss";
 @import "./imports/app/colors.scss";
+@import "./imports/app/fonts.scss";
+@import "./imports/app/backgrounds.scss";
+@import "./imports/app/custom-nav/custom-nav.component.scss";
+@import "./imports/app/home/home.component.scss";
+@import "./imports/app/gallery/gallery.component.scss";
+@import "./imports/app/who-we-are/who-we-are.component.scss";
+@import "./imports/app/about/about.component.scss";
+@import "./imports/app/auth/login.component.scss";
+@import "./imports/app/available/available-form.component.scss";
+@import "./imports/app/available/available-list.component.scss";
+@import "./imports/app/available/available-upload.component.scss";
+@import "./imports/app/contact/contact.component.scss";
+@import "./imports/app/nsb-services/nsb-services.component.scss";
+@import "./imports/app/social/social.component.scss";
+@import "./imports/app/synopsis/synopsis.component.scss";
+@import "./imports/app/v3rewind/custom-nav/custom-nav.component.scss";
+@import "./imports/app/v3rewind/media/media.component.scss";
+@import "./imports/app/v3rewind/press/press.component.scss";
+@import "./imports/app/v3rewind/profiles/profiles.component.scss";
+@import "./imports/app/v3rewind/sponsors/sponsors.component.scss";
+@import "./imports/app/v3rewind/verseatility/v3.component.scss";
+@import "./imports/app/6st/custom-nav/custom-nav.component.scss";
+@import "./imports/app/6st/six-strange-tales/six-strange-tales.component.scss";
+@import "./imports/app/6st/intro/intro.component.scss";
+@import "./imports/app/6st/synopsis/synopsis.component.scss";
+@import "./imports/app/6st/footer/footer.component.scss";
+@import "./imports/app/wvoe/wvoe.component.scss";
+@import "./imports/app/footer/footer.component.scss";
 
 html, body {
   height: 100%;
+  overflow-x: hidden;
 }
  
 body {
   background-color: $color1;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Helvetica neue', sans-serif;
 
   a {
   	color: $color3;
@@ -19,43 +49,31 @@ body {
 	}
 }
 
+.wrapper {
+	padding: 0;
+	margin: 0;
+}
+
 .full-width { 
 	width: 100vw;
 }
 
-.home {
-	.mast {
-		background-color: transparent;
-	}
-		
-	.tagline {
-		display: block !important;
-		width: 22rem;
-	  height: 5rem;
-		background: url(/img/tagline.png) no-repeat;
-		-webkit-background-size: contain;
-	  -moz-background-size: contain;
-	  -o-background-size: contain;
-	  background-size: contain;
-	  margin-left: -34% !important;
-	  bottom: 4rem;
-	  right: 1rem;
-	}
+.max-30 { 
+	max-width: 30%;
 }
 
-.mast {
-	background-color: $color4;
-	margin-bottom: 1rem;
+.clearfix {
+  display: block;
+  
+  clear: both;
+}
 
-	.navbar {
-		padding-bottom: .5rem !important;
-	}
+.hide {
+	display: none;
+}
 
-	@media (min-width: 992px) {
-		.title {
-			display: none;
-		}
-	}
+.cursor {
+	cursor: pointer;
 }
 
 available-form {

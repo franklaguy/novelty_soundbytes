@@ -44,7 +44,7 @@ function buildQuery(availableModelId?: string, name?: string): Object {
 		};
 	}
 
-const searchRegEx = { '$regex': '.*' + (name || '') + '.*', '$options': 'i' };
+	const searchRegEx = { '$regex': '.*' + (name || '') + '.*', '$options': 'i' };
 
 	return {
 		$and: [{ 'name': searchRegEx },

@@ -1,69 +1,127 @@
-<div class="container-fluid mast">
+<div class="container-fluid mast six-strange-tales-common">
 	<div class="row">
 		<div class="col-md-12">
-			<custom-nav></custom-nav>
+			<sst-custom-nav></sst-custom-nav>
 		</div>
 	</div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid bg-white details">
 	<div class="row">
 		<div class="col-md-12">
-	  	<header *ngIf="availableModel">
-				<h2>{{availableModel.name}}</h2>
-				<p>{{availableModel.description}}</p>
-				<p  *ngIf="availableModel.name == 'Novelty Soundbytes';">
-					Contact <a href="mailto:team@sixstrangetales.com?Subject=I%20would%20like%20to%20order%20Six%20Strange%20Tales%20using%20Venmo" target="_top">team@sixstrangetales.com</a> now to pay with Venmo
-				</p>
-			</header>
+			<h2 [hidden]="!user">View and Edit Book Details:</h2>
 			<hr />
+			<form class="form-horizontal" *ngIf="availableModel" (submit)="saveDetails()">
+		  	<header>
+					<div class="product text-center">
+						<div *ngFor="let i of availableModel.images">
+							<img *ngIf="i && i.length > 0" 
+								  class="available-main-image" 
+								 	[src]="i" 
+								 	alt="{{ availableModel.name }}"
+								 	width="200" />
+							<button class="btn btn-danger close" (click)="deleteImage(i)" [hidden]="!isOwner">
+		            <span aria-hidden="true">&times;</span>
+		          </button>
+						</div>
+						<available-upload #upload (onFile)="onImage($event)" [hidden]="!isOwner"></available-upload>
+					</div>
+					<hr />
+					<h1>{{availableModel.name}}</h1>
+					<div [hidden]="!user" class="form-group">
+						<label>Update Name</label>
+						<input type="text" [(ngModel)]="availableModel.name" name="name" [disabled]="!isOwner" class="form-control">
+					</div>
+				</header>
+				<hr />
+				<p>{{availableModel.description}}</p>
+				<div [hidden]="!user"class="form-group">
+					<label>Update Description</label>
+					<textarea type="text" [(ngModel)]="availableModel.description" name="description" [disabled]="!isOwner" class="form-control"></textarea>
+				</div>
+				<hr />
+				<p>{{availableModel.credit}}</p>
+				<div [hidden]="!user" class="form-group">
+					<label>Update Credit</label>
+					<input type="text" [(ngModel)]="availableModel.credit" name="credit" [disabled]="!isOwner" class="form-control" />
+				</div>
+				<hr />
+				<ul class="form-group links">
+					<li class="public">
+						<a href="{{availableModel.links.digital.link}}" target="_blank">
+							{{availableModel.links.digital.seller}}
+						</a> &nbsp;&nbsp;
+					</li>
+					<li class="public"> 
+						<a href="{{availableModel.links.other.link}}" target="_blank">
+							{{availableModel.links.other.seller}}
+						</a> &nbsp;&nbsp;
+					</li>
+					<li class="public"> 
+						<a href="{{availableModel.links.other2.link}}" target="_blank">
+							{{availableModel.links.other2.seller}}
+						</a> &nbsp;&nbsp;
+					</li>
+					<li class="public"> 
+						<a href="{{availableModel.links.other3.link}}" target="_blank">
+							{{availableModel.links.other3.seller}}
+						</a>
+					</li>
+					<span [hidden]="!user">
+						<li class="form-group">
+							<label>Update Links</label>
+							<input type="text" [(ngModel)]="availableModel.links.digital.seller" name="linksDigitalSeller" [disabled]="!isOwner" class="form-control links first" placeholder="Update link">
+							<input type="text" [(ngModel)]="availableModel.links.digital.link" name="LinksDigitalLink" [disabled]="!isOwner" class="form-control links" placeholder="Update link">
+						</li>
+						<li class="form-group">
+							<input type="text" [(ngModel)]="availableModel.links.other.seller" name="linksOtherSeller" [disabled]="!isOwner" class="form-control links first" placeholder="Update link">
+							<input type="text" [(ngModel)]="availableModel.links.other.link" name="linksOtherLink" [disabled]="!isOwner" class="form-control links" placeholder="Update link">
+						</li>
+						<li class="form-group">
+							<input type="text" [(ngModel)]="availableModel.links.other2.seller" name="linksOther2Seller" [disabled]="!isOwner" class="form-control links first" placeholder="Update link">
+							<input type="text" [(ngModel)]="availableModel.links.other2.link" name="linksOther2Link" [disabled]="!isOwner" class="form-control links" placeholder="Update link">
+						</li>
+						<li class="form-group">
+							<input type="text" [(ngModel)]="availableModel.links.other3.seller" name="linksOther3Seller" [disabled]="!isOwner" class="form-control links first" placeholder="Update link">
+							<input type="text" [(ngModel)]="availableModel.links.other3.link" name="linksOther3Link" [disabled]="!isOwner" class="form-control links" placeholder="Update link">
+						</li>
+						<li class="form-group">
+							Public 
+							<input type="text" [(ngModel)]="availableModel.public" name="linksOther3Seller" [disabled]="!isOwner" class="form-control links first" type="checkbox" placeholder="Update link">
+						</li>
+					</span>
+				</ul>
+				<div class="form-group" [hidden]="!user">
+					<button class="btn btn-info pull-left" type="submit" [disabled]="!isOwner">{{save}}</button> 
+					<a class="btn btn-danger txt-white pull-right" [routerLink]="['/list/']">Cancel</a>
+				</div>
+			</form>
 		</div>
 	</div>
 	<div class="row">
-	  <div class="col-md-12">
-			<h5 *ngIf="isOwner || isPublic">View and Edit Book Details:</h5>
-	  	<form class="form-horizontal" *ngIf="availableModel" (submit)="saveDetails()">
-	  		<div class="form-group">
-					<label>Update Name</label>
-					<input type="text" [(ngModel)]="availableModel.name" name="name" [disabled]="!isOwner" class="form-control">
-				</div>
-				<div class="form-group">
-					<label>Update Description</label>
-					<input type="text" [(ngModel)]="availableModel.description" name="description" [disabled]="!isOwner" class="form-control">
-				</div>
-				<div class="form-group links">
-					<label>Update Links</label>
-					<input type="text" [(ngModel)]="availableModel.links.digital" name="digital" [disabled]="!isOwner" class="form-control" placeholder="Update link">
-					<input type="text" [(ngModel)]="availableModel.links.paperback" name="paperback" [disabled]="!isOwner" class="form-control" placeholder="Update link">
-					<input type="text" [(ngModel)]="availableModel.links.hardcover" name="hardcover" [disabled]="!isOwner" class="form-control" placeholder="Update link">
-				</div>
-				<div class="form-group">
-					<label>Update Reviews Link</label>
-					<input type="text" [(ngModel)]="availableModel.reviews" name="reviews" [disabled]="!isOwner" class="form-control" placeholder="Update reviews link">
-				</div>
-				<div class="form-group">
-					<button type="submit" [disabled]="!isOwner">Save</button> 
-					<a [routerLink]="['/']">Cancel</a>
-				</div>
-			</form>
-			<hr />
-	  </div>
-	</div>
-	<ul class="list-group" *ngIf="isOwner || isPublic">
-		<li class="list-group-item">
-			<ul class="list-group">
-				<p>Users to invite</p>
-				<li  *ngFor="let user of users | async">
-					<p>{{user | displayName}}</p>
-					<button (click)="invite(user)" class="btn btn-primary btn-sm">Invite</button>
-					<div *ngIf="isInvited">
-						 <h2>Reply to Invitation</h2>
-						 <input class="btn btn-primary" type="button" value="I'm in!" (click)="reply('yes')">
-						 <input class="btn btn-warning" type="button" value="Maybe" (click)="reply('maybe')">
-						 <input class="btn btn-danger" type="button" value="No" (click)="reply('no')">
-					</div>
+		<div class="col-md-12">	
+			<ul class="list-group hide" *ngIf="isOwner || isPublic">
+				<li class="list-group-item">
+					<ul class="list-group">
+						<p>Users to invite</p>
+						<li  *ngFor="let user of users | async">
+							<p>{{user | displayName}}</p>
+							<button (click)="invite(user)" class="btn btn-primary btn-sm">Invite</button>
+							<div *ngIf="isInvited">
+								 <h2>Reply to Invitation</h2>
+								 <input class="btn btn-primary" type="button" value="I'm in!" (click)="reply('yes')">
+								 <input class="btn btn-warning" type="button" value="Maybe" (click)="reply('maybe')">
+								 <input class="btn btn-danger" type="button" value="No" (click)="reply('no')">
+							</div>
+						</li>
+					</ul>
 				</li>
 			</ul>
-		</li>
-	</ul>
+			<hr />
+			<p>
+				Contact <a href="mailto:team@canikickit.tv?Subject=I%20would%20like%20to%20make%20a%20direct%20order%20using%20Venmo" target="_top">team@canikickit.tv</a> to make direct order using VENMO
+				<a class="pull-right" [routerLink]="['/list/']" target="_top">Back</a>
+			</p>
+		</div>
+	</div>
 </div>
 <footer></footer>

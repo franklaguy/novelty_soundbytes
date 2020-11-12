@@ -1,0 +1,24 @@
+@import "../colors";
+@import "../fonts";
+@import "../backgrounds";
+
+.mast {
+	background-color: $color1;
+	width: 100%;
+	color: $color1;
+
+	.nav-container {
+		border-bottom: 1px solid #fff;
+		background-color: $color4;
+		background: url(/img/nsb/nSbHeader.png) no-repeat center center;
+		-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  text-align: center;
+	}
+}
+
+ul.clients li {
+	padding-bottom: 2rem;
+}

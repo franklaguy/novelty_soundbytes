@@ -1,0 +1,38 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded pull-left">
+	<div class="container-fluid">
+	  <a class="navbar-brand navbar-toggler" (click)="isCollapsed = !isCollapsed" href="javaScript:void(0);">
+	    <img src="/img/icon-power.png" width="30" height="30" class="d-inline-block align-top" alt="power menu button">
+	  </a>
+		<div class="collapse navbar-collapse pl-0" [collapse]="isCollapsed">
+	    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+	      <li class="nav-item pl-0">
+	        <a class="nav-link pl-0 no-hover" [routerLink]="['/']">NSB <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link visuals" [routerLinkActive]="['active']" [routerLink]="['/v3rewind/']">Visuals <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link visuals" [routerLinkActive]="['active']" [routerLink]="['/v3rewind/media/']"> Media</a>
+	      </li>
+	      <li class="nav-item press">
+	        <a [routerLinkActive]="['active']" class="nav-link read" [routerLink]="['/v3rewind/press/']">Press <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link read" [routerLinkActive]="['active']" [routerLink]="['/v3rewind/sponsors/']">Sponsors  <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link buy-invert" [routerLinkActive]="['active']" [routerLink]="['/list/']"> Catalog</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link instagram" [routerLinkActive]="['active']" [routerLink]="['/contact/']">Contact <span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+
+	    <span id="search" class="form-inline my-2">
+				<input #searchtext class="form-control pull-right" type="text" placeholder="Search catalog">
+	      <button class="btn btn-outline-success pull-right" type="button" (click)="search(searchtext.value)">Search</button>
+	    </span>
+	    
+	  </div>
+	</div>
+</nav>

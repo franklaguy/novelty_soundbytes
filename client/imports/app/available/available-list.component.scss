@@ -1,22 +1,78 @@
 @import "../colors";
+@import "../fonts";
+@import "../backgrounds";
 
-.pagination {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-left: -1rem;
+.mast {
+  background-color: $color4;
 }
 
-.close {
-  position: absolute;
-  right: -2rem;
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul.banner {
+  height: 10rem;
+  position: relative;
+  overflow: hidden;
+
+  li {
+    width: 63%;
+    -moz-clip-path: polygon(0% 0, 100% 0, 50% 100%, 0 100%);
+    -o-clip-path: polygon(0% 0, 100% 0, 50% 100%, 0 100%);
+    -webkit-clip-path: polygon(0% 0, 100% 0, 50% 100%, 0 100%);
+    clip-path: polygon(0% 0, 100% 0, 50% 100%, 0 100%);
+    position: absolute;
+  }
+
+  li:nth-child(1) {
+    width: 47%;
+    height: 11rem;
+    position: relative;
+    background: url(/img/catalog/6st-postcards.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  li:nth-child(3) {
+    width: 70%;
+    clip-path: none;
+    -webkit-clip-path: none;
+    -moz-clip-path: none;
+    -o-clip-path: none;
+    padding-top: 1rem;
+    margin-left: -4rem;
+
+    a:hover {
+      color: $color3;
+    }
+  }
+}
+
+form ul.login li {
+  width: auto;
+  padding-bottom: 0 !important;
+}
+
+form ul.login input {
+      margin-bottom: 0;
+}
+
+.search-catalog {
+  width: 70%;
 }
 
 span#search {
-  width: 100%;
+  display: flex;
 
-  .form-control {
-    width: 70%;
+  input {
+    border-radius: 5px 0 0 5px;
+  }
+
+  button {
+    border-radius: 0 5px 5px 0;
   }
 
   button:hover {
@@ -25,134 +81,189 @@ span#search {
     border-color: $color4;
   }
 }
- 
-.ma-add-button-container {
-  button.btn {
-    background: $color3;
-    float: right;
-    margin-right: 5px;
-    outline: none;
-    i {
-      color: $color5;
-    }
+
+.catalog {
+  h3 {
+    border-bottom: .5rem solid $color3;
+  }
+
+  li {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+
+  li:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  img.available-main-image {
+    max-width: 100px;
+  }
+
+  p.desc {
+    width: 67%;
+    text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -moz-box;
+    -moz-line-clamp: 5;
+    -moz-box-orient: vertical;
+  }
+
+  p.credit {
+    color: $grey;
+    font-size: .8rem;
+    text-align: left;
+    margin-top: -.5rem;
+  }
+
+  .close {
+    margin-top: -.4rem;
+    background-color: $color4;
+    text-shadow: none;
+    opacity: 1;
+    padding: .4rem .7rem .5rem;
+  }
+
+  .invite {
+    bottom: 0;
+    position: relative;
+    padding: 1rem;
+    display: none;
   }
 }
- 
-.ma-available-col {
-  padding-top: 20px;
-}
- 
-.ma-filters {
-  margin-bottom: 10px;
-}
- 
-.ma-available-item {
-  .ma-available-name {
-    margin-bottom: 20px;
-    a {
-      color: $color6;
-      text-decoration: none !important;
-      font-weight: 400;
-    }
-  }
-  .ma-available-description {
-    color: $color6;
-    font-weight: 300;
-    padding-left: 18px;
-    font-size: 14px;
-  }
- 
-  .ma-remove {
-    color: lighten($color7, 20%);
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    &:hover {
-      color: $color7;
-    }
-  }
- 
-  .ma-available-item-bottom {
-    padding-top: 10px;
-    .ma-posted-by-col {
-      .ma-posted-by {
-        color: darken($color4, 30%);
-        font-size: 12px;
-      }
-      .ma-everyone-invited {
-        @media (max-width: 400px) {
-          display: block;
-          i {
-            margin-left: 0px !important;
-          }
+
+.details {
+  form {
+    label { display: block; }
+
+    ul {
+      padding: 0;
+
+      li {
+        width: 100%;
+
+        .links {
+          width: 48%;
+          display: inline-block;
         }
-        font-size: 12px;
-        color: darken($color4, 10%);
-        i {
-          color: darken($color4, 10%);
-          margin-left: 5px;
+
+        input.first {
+          margin-right: 2%;
         }
       }
-    }
- 
-    .ma-rsvp-buttons {
-      input.btn {
-        color: darken($color3, 20%);
-        background: transparent !important;
-        outline: none;
-        padding-left: 0;
-        &:active {
-          box-shadow: none;
-        }
-        &:hover {
-          color: darken($color3, 30%);
-        }
-        &.btn-primary {
-          color: lighten($color3, 10%);
-          border: 0;
-          background: transparent !important;
-        }
+
+      li.public {
+        display: initial;
       }
     }
- 
-    .ma-rsvp-sum {
-      width: 160px;
-      @media (min-width: 400px) {
-        float: right;
-      }
-      @media (max-width: 400px) {
-        margin: 0 auto;
-      }
-    }
-    .ma-rsvp-amount {
+    
+    .product { position: relative; }
+
+    div.product div {
       display: inline-block;
-      text-align: center;
-      width: 50px;
-      .ma-amount {
-        font-weight: bold;
-        font-size: 20px;
+      width: 17rem;
+      height: 18rem;
+
+      button.close {
+        float: none;
+        position: absolute;
+        margin: 0 -0.5rem 0 -1.5rem;
+        background-color: $color4;
+        text-shadow: none;
+        opacity: 1;
+        padding: .2rem .7rem .5rem;
+
+        span {
+          padding-right: 0;
+        }
       }
-      .ma-rsvp-title {
-        font-size: 11px;
-        color: #aaa;
-        text-transform: uppercase;
-      }
+    }
+  }
+
+  .product {
+    display: block;
+
+    span {
+      padding-right: 1rem;
     }
   }
 }
 
-img.available-main-image {
-  max-width: 100%;
-  max-height: 100%;
+.login li {
+  line-height: 1.8rem;
 }
- 
-.ma-angular-map-col {
-  .angular-google-map-container, .angular-google-map {
-    height: 100%;
-    width: 100%;
+
+.pagination {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: -1rem;
+}
+
+.list-group-item {
+  display: inline-block;
+}
+
+@media (min-width: 600px) {
+  ul.banner {
+    li:nth-child(3) {
+      width: 57%;
+    }
+  }
+
+  .catalog p.desc {
+    width: 80%;
   }
 }
- 
-.search-form {
-  margin-bottom: 1em;
+
+@media (min-width: 992px) {
+  ul.banner {
+    li:nth-child(3) {
+      background: url(/img/nsb/scenes/6st/title.png) no-repeat 100% 10%;
+      background-size: 30%;
+    }
+  }
+
+  ul.catalog {
+    display: inline-block;
+
+    li {
+      width: 32%;
+      min-height: 20rem;
+      padding-bottom: 2rem;
+      margin: 0 .5rem .5rem 0;
+
+      p.desc {
+        width: 60%;
+      }
+
+      .sellers {
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  .list.mast .navbar-toggleable-md .navbar-collapse {
+    margin-top: 2.9rem !important;
+  }
+
+  .list .six-strange-tales-nav.navbar-toggleable-md {
+    background-color: $color4;
+  }
+}
+
+@media (min-width: 1100px) {
+  ul.banner {
+    li:nth-child(2) {
+      background: url(/img/catalog/6st-hardcover.png) no-repeat 3% 37%;
+      background-size: 13%;
+      height: 10rem;
+    }
+  }
 }

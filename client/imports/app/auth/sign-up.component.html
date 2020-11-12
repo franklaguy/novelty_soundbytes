@@ -1,0 +1,10 @@
+<form [formGroup]="signUpForm" #f="ngForm" (ngSubmit)="signUp()">
+	<ul class="login">
+		<li><span [hidden]="error == ''" class="text-danger">{{error}}</span></li>
+		<li><input formControlName="email" type="email" placeholder="Email" /></li>
+		<li class="pr-2"><input formControlName="password" type="password" placeholder="Password" /></li>
+		<li>
+			<button class="pull-right txt-red bg-black border-top-0 border-bottom-0 cursor text-white" type="submit" aria-label="login">Sign Up</button>
+		</li>
+	</ul>
+</form>

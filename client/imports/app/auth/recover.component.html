@@ -1,0 +1,9 @@
+<form [formGroup]="recoverForm" #f="ngForm" (ngSubmit)="recover()">
+	<ul class="login">
+		<li><span [hidden]="error == ''" class="text-danger">{{error}}</span></li>
+		<li class="mr-3"><input formControlName="email" type="email" placeholder="Email" /></li>
+		<li>
+			<button class="pull-right txt-red bg-black border-top-0 border-bottom-0 cursor text-white" type="submit" aria-label="login">Recover</button>
+		</li>
+	</ul>
+</form>

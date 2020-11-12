@@ -1,94 +1,130 @@
-<div class="container-fluid mast">
+<div class="container-fluid mast mb-0">
   <div class="row">
-    <div class="col-md-12">
-      <custom-nav></custom-nav>
+    <div class="col-md-12 pl-0 pr-0 bg-color4">
+      <ul class="banner">
+        <li></li>
+        <li></li>
+        <li class="text-center">
+          <h3 class="txt-white text-shadow-white">
+            <a href="https://www.barnesandnoble.com/w/six-strange-tales-individual-eleven/1107867933?ean=9781538025369" target="_blank">
+              <img class="mb-2" src="/img/icon-buy-invert.png" width="40" height="40" />
+            </a>
+            <br />HardCover <br />NOW AVAILABLE!!
+          </h3>
+          <p>Also available on 
+            <a href="https://www.barnesandnoble.com/w/six-strange-tales-individual-eleven/1107867933?ean=2940013454415#productInfoTabs" target="_blank">
+              Nook
+            </a> and 
+            <a href="https://www.amazon.com/Six-Strange-Tales-Individual-Eleven-ebook/dp/B006GRZ0D8/ref=sr_1_3?s=books&ie=UTF8&qid=1497910145&sr=1-3&keywords=six+strange+tales" target="_blank">
+              Kindle
+            </a>
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid mast list mb-0">
   <div class="row">
-    <div class="col-md-12">
-      <h5>
-        <a href="https://www.barnesandnoble.com/w/six-strange-tales-individual-eleven/1107867933?ean=9781538025369" target="_blank">
-          <img src="/img/buy-icon-32.png" width="40" height="40" />
-        </a>
-        Paperback Available NOW!!
-      </h5>
-      <p>Also available on 
-        <a href="https://www.barnesandnoble.com/w/six-strange-tales-individual-eleven/1107867933?ean=2940013454415#productInfoTabs" target="_blank">
-          Nook
-        </a> and 
-        <a href="https://www.amazon.com/Six-Strange-Tales-Individual-Eleven-ebook/dp/B006GRZ0D8/ref=sr_1_3?s=books&ie=UTF8&qid=1497910145&sr=1-3&keywords=six+strange+tales" target="_blank">
-          Kindle
-        </a>
-      </p>
+    <div class="col-md-12 pl-0 pr-0">
+      <sst-custom-nav></sst-custom-nav>
     </div>
   </div>
+</div>
 
-  <ul class="list-group">
-    <li class="list-group-item">
-      <span id="search" class="form-inline my-2 my-lg-0">
-        <input class="form-control pull-left"  type="text" #searchtext placeholder="Search available sellers">
-        <button class="btn btn-outline-success pull-left" type="button" (click)="search(searchtext.value)">Search</button>
-      </span>
-      <div class="row full-width">
-        <div class="col-sm-8">
-          <select #sort (change)="changeSortOrder(sort.value)">
+<div class="container-fluid mb-0 bg-black">
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <div [hidden]="user">
+        <span *ngIf="!login" class="pull-right txt-red pt-0 pl-1"><small>&#9660;</small></span>
+        <span *ngIf="!login && !account" (click)="login = !login" class="pull-right txt-red pb-1 cursor">Login </span> 
+        <login *ngIf="login && !password && !account" class="pull-right"></login> 
+        <ul *ngIf="login && !password && !account" class="login pull-left">
+          <li (click)="password = !password" class="pull-left pr-3 cursor text-white pb-2">Forgot password?</li>
+          <li (click)="account = !account" class="pull-left cursor text-white pb-2">Need an account?</li>
+        </ul>
+        <sign-up *ngIf="account" class="pull-right"></sign-up>
+        <ul *ngIf="account" class="login pull-left">
+          <li *ngIf="account" (click)="account = !account" class="pull-left cursor">Already a user?</li>
+        </ul>
+        <recover *ngIf="password" class="pull-right"></recover>
+        <ul *ngIf="password" class="login pull-left">
+          <li class="pull-left cursor" (click)="password = !password">Remember your password?</li>
+        </ul>
+      </div>
+      <div [hidden]="!user">
+        <button class="pull-right txt-red bg-black border-top-0 border-bottom-0 cursor" (click)="logout()">Logout</button>
+        <span class="pull-right txt-red pb-1">
+          {{ user | displayName }}  &nbsp;
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mb-0">
+  <div class="row">
+    <div class="col-md-12">
+      <available-form [hidden]="!user"></available-form>
+    </div>
+  </div>
+</div>
+<hr [hidden]="!user" />
+<div class="container-fluid mb-0">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="pt-3 pb-4">
+        <li class="search-catalog">
+          <span id="search">
+            <input class="form-control pull-left" type="text" #searchtext placeholder="Search catalog">
+            <button class="btn btn-outline-success pull-left" type="button" (click)="search(searchtext.value)">Search</button>
+          </span>
+        </li>
+        <li class="pull-right">
+          <select class="custom-select mt-1 mb-2 mr-sm-2 mb-sm-0" #sort (change)="changeSortOrder(sort.value)">
             <option value="1" selected>Sort A-Z</option>
             <option value="-1">Sort Z-A</option>
           </select>
-        </div>
-      </div>
-    </li>
-  </ul> 
-
-  <ul class="list-group">
-    <li class="list-group-item">
-      <available-form class="test" [hidden]="!user"></available-form>
-    </li>
-  </ul> 
-  <ul class="list-group">
-    <li *ngFor="let at of available | async" class="list-group-item">
-      <div class="row full-width">
-        <div class="col-sm-8">
-          <div class="col-sm-8 close pull-right">
-            <button class="btn btn-danger pull-right" (click)="removeAvailable(at)" [hidden]="!isOwner(at)">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
-          <img *ngIf="at.images && at.images.length > 0" class="available-main-image" [src]="at | displayMainImage" />
-          <span *ngIf="at.name == 'Novelty Soundbytes';">
-            <!-- <login-buttons class="pull-right"></login-buttons> -->
-          </span>
-          <h5 class="ma-available-name">
-            <a [hidden]="!user" [routerLink]="['/details/', at._id]">{{ at.name }}</a>
-            <span *ngIf="!user">{{ at.name }}</span>
-          </h5>
-          <p class="ma-available-description">{{ at.description }}</p>
-          <p>
-            <span *ngIf="at.links.digital">
-              <a href="{{ at.links.digital }}" target="_blank">Digital</a>  |
-            </span>
-            <span *ngIf="at.links.paperback;">
-              <span *ngIf="at.name == 'Novelty Soundbytes';">
-                <a [routerLink]="['/details/', at._id]">Paperback</a> | {{ at.links.paperback }} |
-              </span>
-              <span *ngIf="at.name != 'Novelty Soundbytes';">
-                <a href="{{ at.links.paperback }}" target="_blank">Paperback</a>  |
-              </span>
-            </span>
-            <span *ngIf="at.links.hardcover">
-              <a href="{{ at.links.hardcover }}" target="_blank">Hardcover</a>
-            </span>
-            <span><a href="{{ at.reviews }}" target="_blank">Reviews</a></span>
+        </li>
+      </ul> 
+    </div>
+   </div>
+  <div class="row">
+    <div class="col-md-12 bg-white text-center">
+      <ul class="list-group catalog">
+        <li *ngFor="let at of available | async" class="list-group-item">
+          <button class="btn btn-danger pull-right close" (click)="removeAvailable(at)" [hidden]="!isOwner(at)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h3 class="text-left"><a [routerLink]="['/details/', at._id]">{{ at.name }}</a></h3>
+          <a [routerLink]="['/details/', at._id]">
+            <img *ngIf="at.images && at.images.length > 0" class="available-main-image pull-left" [src]="at | displayMainImage" alt="{{ at.name }}" />
+          </a>
+          <p class="pull-left pl-2 desc">
+            {{ at.description }}<br />
           </p>
-          <ul class="list-group">
+          <p class="credit pull-left pl-2">{{ at.credit }}</p>
+          <p class="clearfix pt-2 sellers">
+            <span *ngIf="at.links.digital.seller">
+              <a href="{{ at.links.digital.link }}" target="_blank">
+                {{ at.links.digital.seller }}
+              </a> &nbsp;&nbsp;
+            </span>
+            <span *ngIf="at.links.other.seller">
+              <a href="{{ at.links.other.link }}" target="_blank">{{ at.links.other.seller }}</a>&nbsp;&nbsp;
+            </span>
+            <span *ngIf="at.links.other2.seller">
+              <a href="{{ at.links.other2.link }}" target="_blank">{{ at.links.other2.seller }}</a>&nbsp;&nbsp;
+            </span>
+            <span *ngIf="at.links.other3.seller"> <a href="{{ at.links.other3.link }}" target="_blank">{{ at.links.other3.seller }}</a>&nbsp;&nbsp;</span>
+          </p>
+          <ul class="list-group invite">
             <li class="list-group-item">YES: {{at | rsvp:'yes'}} | NO: {{at | rsvp:'no'}} | MAYBE: {{at | rsvp:'maybe'}}</li>
           </ul>
-        </div>
-      </div>
-    </li>
-  </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-12 pagination">
       <pagination-controls (pageChange)="onPageChanged($event)"></pagination-controls>

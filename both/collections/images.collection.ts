@@ -18,8 +18,8 @@ export const ThumbsStore = new UploadFS.store.GridFS({
 		update: loggedIn,
 		remove: loggedIn
 	}),
-	transformWrite( from, to, fileId, file ) {
-		const gm = require('gm'); // Resize to 32x32
+	transform( from, to, fileId, file ) {
+		const gm = Npm.require('gm'); // Resize to 32x32
 
 		gm ( from, file.name )
 			.resize(32, 32)
@@ -30,6 +30,8 @@ export const ThumbsStore = new UploadFS.store.GridFS({
 			.pipe(to)
 	}
 });
+
+UploadFS.config.https = true;
 
 export const ImagesStore = new UploadFS.store.GridFS({
 	collection: Images.collection,

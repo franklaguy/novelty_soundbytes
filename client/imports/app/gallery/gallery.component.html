@@ -1,0 +1,23 @@
+<div class="content scenes scene{{ scene }} pt-0">
+	<p><b>NOVELTY SOUNDBYTES</b> presents</p>
+	<div class="next view{{ scene }} pull-right" (click)="nextScene(scene)">&rang;</div>
+	<div class="prev view{{ scene }} pull-left" (click)="prevScene(scene)">&lang;</div>
+	<ul class="cta-slides">
+    <li *ngFor="let s of gallery | async; let i = index"
+    		id="id{{ i+1 }}"
+    		[class.active]="clicked === s || i === 0" 
+       	(click)="clicked = s;
+       					 getScene(i+1);">
+      {{i+1}}
+    </li>
+	</ul>
+</div>
+<div class="pull-right right-rail">
+	<ul class="wrapper">
+		<li *ngFor="let c of gallery | async; let i = index" class="headlines" [ngClass]="{ 'active': i+1 === scene}">
+			<h1><a href="{{c.mainLink}}" target="_blank">{{c.mainTag}}</a></h1>
+			<h2><a href="{{c.subLink}}" target="_blank">{{c.subTag}}</a></h2>
+			<p><a class="cta" href="{{c.mainLink}}" target="_blank">{{c.cta}}</a></p>
+		</li>
+	</ul>
+</div>

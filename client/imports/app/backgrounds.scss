@@ -1,0 +1,16 @@
+@import "colors";
+
+.bg-white { background-color: $color1; }
+.bg-black { background-color: $color2; }
+
+// 6ST
+.bg-color-red { background-color: $red; }
+.bg-color3 { background-color: $color3; }
+.bg-color4 { background-color: $color4; }
+
+.scene1 { background: url(/img/nsb/scenes/WVOE/NSB-presents-WVOE.png) no-repeat center center; }
+.scene2 { background: url(/img/catalog/Historical-cover.png) no-repeat center center; }
+.scene3 { background: url(/img/nsb/scenes/v3rewind/v3rewind-promo.jpg) no-repeat center center; }
+.scene4 { background: url(/img/nsb/scenes/6st/6st.jpg) no-repeat center center; }
+.scene5 { background: url(/img/nsb/scenes/services/who-mag.png) no-repeat center center; }
+.scene6 { background: url(/img/nsb/scenes/black-diamond/black-diamond.png) no-repeat center center; }

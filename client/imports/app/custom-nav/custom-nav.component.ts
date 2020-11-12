@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule , ActivatedRoute} from '@angular/router';
+import { Router, RouterModule, ActivatedRoute} from '@angular/router';
 import template from './custom-nav.component.html';
-import style from './custom-nav.component.scss';
+// import style from './custom-nav.component.scss';
 
 @Component({
 	selector: 'custom-nav',
-	template,
-	styles: [ style ]
+	templateUrl: require('./custom-nav.component.html').default,
+	// template,
+	// styleUrls: [ './custom-nav.component.scss' ]
 })
 
 export class CustomNavComponent implements OnInit { 

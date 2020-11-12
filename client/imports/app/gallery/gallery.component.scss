@@ -1,0 +1,203 @@
+@import "{}/client/imports/app/colors.scss";
+@import "{}/client/imports/app/fonts.scss";
+@import "{}/client/imports/app/backgrounds.scss";
+
+a:hover {
+	color: $nsb-light;
+	text-decoration: none; 
+}
+
+a.cta:hover {
+	color: $color2;
+}
+
+// Set Scenes - backgrounds
+.home .content .content.scenes {
+	height: 25rem;
+	width: 100%;
+	background-color: $color1;
+  display: inline-block;
+	-webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+
+	p { color: $color2; }
+
+	.next, .prev {
+		padding: 3rem 1.5rem;
+		background-color: $color5;
+		opacity: .3;
+		color: $color2;
+		text-align: center;
+		vertical-align: bottom;
+		top: 17%;
+		position: relative;
+		font-size: 50px;
+		width: 10%;
+	}
+
+	.prev.view1, .next.view5  { 
+		display: none;
+	}
+
+	ul.cta-slides {
+		position: absolute;
+		bottom: 0;
+		padding: 0 0 0 0;
+		margin: 0;
+
+		li {
+			display: inline-block;
+			background-color: $color2;
+			color: $color1;
+			padding: .1rem 2rem;
+			margin-right: -1.5rem;
+			-moz-clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
+			-o-clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
+			-webkit-clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
+  		clip-path: polygon(35% 0, 100% 0, 65% 100%, 0 100%);
+  		cursor: pointer;
+		}
+
+		li.active, li:hover {
+			background-color: $color1;
+			color: $color2;
+			border-top: 3px solid $nsb-light;
+		}
+	}
+}
+
+div.pull-right.right-rail {
+	display: block;
+	background-color: $color2;
+	text-transform: uppercase;
+	padding: 1rem;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 2rem;
+
+	.headlines {
+		display: none;
+		min-width: 21rem;
+	  min-height: 11rem;
+
+	  h1 {
+			font-size: 5.2vw;
+			width: 100%;
+	  }
+
+	  h2 { 
+	  	width: 100%;
+	  }
+
+	  h2 a {
+	  	color: $red;
+	  }
+
+	  h2 a:hover {
+	  	color: $nsb-light;
+	  }
+
+		p {
+			border: 2px solid $color1;
+			padding: .5rem;
+			background-color: $red;
+	  	width: 105%;
+	  	cursor: pointer;
+	  	position: absolute;
+	  	bottom: 0;
+		}
+	}
+
+	.headlines.active {
+		display: block;
+
+		h1 a {
+			color: $color1;
+
+			&:hover {
+				color: $nsb-light;
+			}
+		}
+
+		p a {
+			color: $color1;
+
+			&:hover {
+				color: $color2;
+			}
+		}
+	}
+}
+
+@media (min-width: 500px) {
+	div.pull-right.right-rail {
+		.headlines {
+			h1 { font-size: 4.5vw; }
+			h2 { width: 100%;
+		  }
+		}
+	}
+}
+
+@media (min-width: 900px) {
+	div.pull-right.right-rail {
+		.headlines {
+			h1 { font-size: 4vw; }
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.home .content .content.scenes {
+		width: 75%;
+		display: inline-block;
+	}
+
+	div.pull-right.right-rail {
+	  height: 25.4rem;
+		width: 25%;
+		padding: .5rem;
+		background-color: $color2;
+		border-bottom: 13px solid $nsb-dark;
+	  display: inline-block;
+	  color: $color1;
+		-moz-clip-path: polygon(0 0, 100% 0, 84.5% 100%, 0 100%);
+		-o-clip-path: polygon(0 0, 100% 0, 84.5% 100%, 0 100%);
+		-webkit-clip-path: polygon(0 0, 100% 0, 84.5% 100%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 84.5% 100%, 0 100%);
+		text-transform: uppercase;
+		margin-bottom: 0;
+
+		.headlines {
+			h1 {
+				font-size: 2.5vw;
+		  	max-width: 67%;
+			}
+
+		  h2 {
+		  	max-width: 67%;
+		  }
+
+			p {
+				border: 2px solid $color1;
+				padding: .5rem;
+				background-color: $red;
+				bottom: .5rem;
+	    	position: absolute;
+	    	width: 90%;
+	    	cursor: pointer;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	div.pull-right.right-rail {
+		.headlines {
+			h1 { font-size: 2.35vw; max-width: 80%; }
+			h2 { font-size: 1.1rem; max-width: 77%; }
+		}
+	}
+}

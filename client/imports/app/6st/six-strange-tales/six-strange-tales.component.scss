@@ -1,0 +1,186 @@
+@import "../../colors";
+
+.six-strange-tales {
+	background-color: $color4;
+	width: 100%;
+	color: $color1;
+
+	.nav-container {
+		border-bottom: 1px solid #fff;
+		background-color: $color4;
+		background: url(/img/6st/bg.png) no-repeat center center;
+		-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  text-align: center;
+
+		h5 {
+			text-align: center;
+			width: 100%;
+			margin-top: 100px;
+		}
+
+		h5.grid {
+			display: grid;
+		}
+	}
+
+	button {
+		margin: 0 auto 20px;
+		background-color: transparent;
+		border: 2px solid #000;
+		color: $color1;
+		cursor: pointer;
+
+		img {
+			vertical-align: top;
+		}
+	}
+
+	button:hover {
+    color: $color1;
+    background-color: $color4;
+    border-color: $color1;
+    cursor: pointer;
+  }
+
+	.btn-outline-success {
+		color: $color1 !important;
+		border-color: $color1 !important;
+	}
+
+	.content {
+		.content {
+			overflow: hidden;
+			display: table;
+
+			img {
+				vertical-align: top;
+			}
+
+			.list-group {
+				width: 33%;
+			}
+
+			.list-group-item {
+				background-color: transparent;
+				font-size: .9rem;
+			}
+
+			.tag {
+				color: $red;
+			}
+		}
+
+		div {
+			width: 100%;
+			padding-bottom: 1rem;
+			padding-top: .5rem;
+
+			span {
+				display: flex;
+		    justify-content: flex-start
+			}
+		}
+		
+		.message {
+			padding-bottom: 0;
+
+			hr {
+				display: none;
+			}
+		}
+	}
+
+	.synopsis {
+		background-color: $color2;
+	}
+
+	.order {
+		background-color: $color1;
+
+		.content {
+			text-align: center;
+		}
+	}
+
+	.author {
+		border-bottom: 1px solid #fff;
+    margin-bottom: 1rem;
+	}
+}
+
+@media (min-width: 992px) {
+	.six-strange-tales {
+		.nav-container {
+
+			h5 {
+				text-align: center;
+				width: 100%;
+				margin-top: 230px;
+			}
+		}
+	}
+
+	.six-strange-tales {
+		.content {
+			div {
+				padding-top: 1rem;
+				padding-bottom: 0;
+
+				span {
+			    margin-bottom: 2rem;
+				}
+			}
+		
+		.message {
+			hr {
+				display: block;
+			}
+		}
+
+			.list-group-item {
+				margin: auto;
+			}
+		}
+	}
+}
+
+.six-strange-tales {
+	.mast {
+		background-color: transparent;
+	}
+		
+	.tagline {
+		display: block !important;
+		width: 22rem;
+	  height: 5rem;
+		background: url(/img//nsb/scenes/6st/tagline.png) no-repeat;
+		-webkit-background-size: contain;
+	  -moz-background-size: contain;
+	  -o-background-size: contain;
+	  background-size: contain;
+	  margin: 0 auto !important;
+	  right: 1rem;
+	}
+}
+
+
+/* Landscape */
+@media (min-width: 414px) 
+  and (max-width: 736px) { 
+
+  .six-strange-tales {
+  	.tagline {
+  		margin-top: -13rem;
+  	}
+  }
+}
+
+@media (min-width: 992px) {
+	.six-strange-tales .navbar-toggleable-md a.nav-link {
+	    background-image: none;
+	    line-height: 1.7rem;
+	}
+}

@@ -1,0 +1,10 @@
+@import '../../colors';
+
+.mast {
+	background-color: $color4;
+	background: url(/img/6st/bg.png) no-repeat center center;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

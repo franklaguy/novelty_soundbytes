@@ -3,17 +3,19 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Available } from '/both/collections/available.collection';
 import { Meteor } from 'meteor/meteor';
 import template from './available-form.component.html';
-import style from './available-form.component.scss';
+// import style from './available-form.component.scss';
 
 @Component({
 	selector: 'available-form',
-	template,
-	styles: [ style ]
+	// template,
+	templateUrl: require('./available-form.component.html').default,
+	// styles: [ './available-form.component.scss' ]
 })
 
 export class AvailableFormComponent implements OnInit {
 	addForm: FormGroup;
 	images: string[] = [];
+	uploadItem: string;
 
 	constructor(
 		private formBuilder: FormBuilder
@@ -22,13 +24,30 @@ export class AvailableFormComponent implements OnInit {
 	ngOnInit() {
     this.addForm = this.formBuilder.group({
       name: ['', Validators.required],
+      credit: ['', Validators.required],
       description: ['', Validators.required],
-      digital: [],
-      paperback: [],
-      hardcover: [],
-      reviews: [],
+      links: this.formBuilder.group({
+      	digital: this.formBuilder.group({
+		      seller: ['', Validators.required], 
+		      link: ['', Validators.required],
+      	}),
+	      other: this.formBuilder.group({
+		      seller: [], 
+		      link: [],
+      	}),
+	      other2: this.formBuilder.group({
+		      seller: [], 
+		      link: [],
+      	}),
+	      other3: this.formBuilder.group({
+		      seller: [], 
+		      link: [],
+      	}),
+      }),
       public: [false]
     });
+
+    this.uploadItem = "Upload Item";
   }
 
 	addAvailable(): void {
@@ -37,16 +56,31 @@ export class AvailableFormComponent implements OnInit {
 			return;
 		}
 
+		this.uploadItem = "...Uploading Item";
+
 		if (this.addForm.valid) {
 			Available.insert({
 				name: this.addForm.value.name,
+				credit: this.addForm.value.credit,
 				description: this.addForm.value.description,
 				links: { 
-					digital: this.addForm.value.digital, 
-					paperback: this.addForm.value.paperback, 
-					hardcover: this.addForm.value.hardcover 
+					digital: {
+						seller: this.addForm.value.links.digital.seller, 
+						link: this.addForm.value.links.digital.link
+					}, 
+					other: {
+						seller: this.addForm.value.links.other.seller, 
+						link: this.addForm.value.links.other.link
+					}, 
+					other2: {
+						seller: this.addForm.value.links.other2.seller, 
+						link: this.addForm.value.links.other2.link
+					}, 
+					other3: {
+						seller: this.addForm.value.links.other3.seller, 
+						link: this.addForm.value.links.other3.link
+					}
 				},
-				reviews: this.addForm.value.reviews,
 				images: this.images,
 				public: this.addForm.value.public,
 				owner: Meteor.userId()
@@ -54,6 +88,8 @@ export class AvailableFormComponent implements OnInit {
 
 			this.addForm.reset();
 		}
+
+		this.uploadItem = "Uploaded Item";
 	}
 
 	onImage(imageId: string) {

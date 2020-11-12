@@ -1,0 +1,27 @@
+<ul class="content profiles">
+	<li class="next pull-right brick{{profile}}" (click)="nextBrick()">&rang;</li>
+	<li>
+		<div class="wrapper">
+	    <div *ngFor="let b of profiles | async; let i = index">
+	     	<img id="id{{ i+1 }}" 
+	     			 [class.active]="i === 0" 
+	     			 [src]="b.img + '.jpg' | safe: 'resourceUrl'" 
+	     			 alt="profile images" />
+	     	<img *ngIf="profile === i+1" 
+	     			 id="id{{ i+1 }}" 
+	     			 [class.active]="i === 0" 
+	     			 [src]="b.img + '_active.jpg' | safe: 'resourceUrl'" 
+	     			 alt="profile images" />
+	     		<p class="text-center social">
+	     			<a href="//instagram.com/{{b.ig}}" target="_blank">@{{b.ig}}</a>
+	     		</p>
+	      </div>
+	    </div>
+	</li>
+	<li class="prev pull-left brick{{profile}}" (click)="prevBrick()">&lang;</li>
+</ul>
+<div class="descriptions" *ngFor="let desc of profiles | async; let i = index" [ngClass]="{ 'active': profile === i+1 }">
+	<h3 class="txt-black mb-1">{{ desc.profile }}</h3>
+	<p class="txt-black pb-2 mb-0">{{ desc.desc }}</p>
+	<iframe *ngIf="profile === i+1"  width="100%" height="166" scrolling="no" frameborder="no" [src]="desc.embed | safe: 'resourceUrl'"></iframe>
+</div>

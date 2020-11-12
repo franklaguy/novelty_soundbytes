@@ -1,36 +1,35 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded pull-left">
 	<div class="container-fluid">
-		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="title pull-right"></div>
-		<div class="collapse navbar-collapse" [collapse]="isCollapsed">
-	    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-	      <li class="nav-item">
-	        <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
+	  <a class="navbar-brand navbar-toggler" (click)="isCollapsed = !isCollapsed" href="javaScript:void(0);">
+	    <img src="/img/icon-power.png" width="30" height="30" class="d-inline-block align-top" alt="">
+	  </a>
+		<div class="collapse navbar-collapse pl-0" [collapse]="isCollapsed">
+	    <ul class="navbar-nav mr-auto mt-md-0">
+	      <li class="nav-item pl-0">
+	        <a class="nav-link pl-0 no-hover" [routerLink]="['/']">NSB <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/introduction/']">Introduction <span class="sr-only">(current)</span></a>
+	        <a [routerLinkActive]="['active']" class="nav-link" [routerLink]="['/who-we-are/']">Who we are <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/synopsis/']">Synopsis <span class="sr-only">(current)</span></a>
+	        <a class="nav-link read" [routerLinkActive]="['active']" [routerLink]="['/nsb-services/']">Services  <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a [routerLinkActive]="['active']" class="nav-link" [routerLink]="['/about-the-author/']">About the Author <span class="sr-only">(current)</span></a>
-	      </li>
-	      <!-- <li class="nav-item"> TODO: Add actual merchandise
-	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/merchandise']">Merchandise <span class="sr-only">(current)</span></a>
-	      </li> -->
-	      <li class="nav-item">
-	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/list/']">Buy 6ST Now</a>
+	        <a class="nav-link visuals" [routerLinkActive]="['active']" [routerLink]="['/v3rewind/press/']">Press <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/contact/']">Contact <span class="sr-only">(current)</span></a>
+	        <a class="nav-link read" [routerLinkActive]="['active']" [routerLink]="['/v3rewind/sponsors/']">Sponsors  <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link buy-invert" [routerLinkActive]="['active']" [routerLink]="['/list/']"> Catalog</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link instagram" [routerLinkActive]="['active']" [routerLink]="['/contact/']">Contact <span class="sr-only">(current)</span></a>
 	      </li>
 	    </ul>
 
-	    <span id="search" class="form-inline my-2 my-lg-0">
-				<input #searchtext class="form-control pull-right" type="text" placeholder="Search available sellers">
+	    <span id="search" class="form-inline">
+				<input #searchtext class="form-control pull-right" type="text" placeholder="Search catalog">
 	      <button class="btn btn-outline-success pull-right" type="button" (click)="search(searchtext.value)">Search</button>
 	    </span>
 	    

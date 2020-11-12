@@ -1,0 +1,21 @@
+@import "../colors";
+
+.cta {
+	padding-bottom: 0;
+
+	img {
+		margin-right: .9rem;
+	}
+
+	span {
+		display: inline-block;
+	}
+}
+
+@media (min-width: 992px) {
+	.cta {
+		padding-bottom: 1.8rem;
+
+		img, span { display: none !important; }
+	}
+}

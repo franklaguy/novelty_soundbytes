@@ -1,0 +1,41 @@
+@import "../colors";
+@import "../fonts";
+@import "../backgrounds";
+
+.mast {
+	background-color: $color1;
+	width: 100%;
+	color: $color1;
+
+	.nav-container {
+		border-bottom: 1px solid #fff;
+		background-color: $color4;
+		background: url(/img/nsb/nSbHeader.png) no-repeat center center;
+		-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  text-align: center;
+	}
+
+	.navbar-toggleable-md .navbar-collapse {
+		margin-top: 2.9rem;
+	}
+}
+
+.who-are-we {
+	.content {
+		color: $color2;
+
+		p.tag { color: $nsb-light; }
+		p { 
+			color: $color2; 
+			padding-bottom: .7rem;
+			line-height: 20px;
+		}
+	}
+}
+
+ul.clients li {
+	margin: 2rem 2rem 0;
+}

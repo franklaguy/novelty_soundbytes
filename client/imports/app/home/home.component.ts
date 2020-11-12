@@ -1,21 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import template from './home.component.html';
-import style from './home.component.scss';
+import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
 
 @Component({
 	selector: 'home',
-	template,
-	styles: [ style ]
+	templateUrl: require('./home.component.html').default,
 })
 
-export class HomeComponent implements OnInit { 
-	constructor() {}
+export class HomeComponent implements OnInit {
+	embed: any[];
 
-	ngOnInit() {  }
+	constructor(private sanitizer: DomSanitizer) {}
+
+	ngOnInit() {
+		this.embed = [{
+			'youTube': this.sanitizer.bypassSecurityTrustResourceUrl('//www.youtube.com/embed/kczJSMXL5iE?rel=0&autoplay=1')
+		}]
+	}
 
 	openPage (value: string): void {
 		window.open(value);
 	}
 
 	public isCollapsed: boolean = true;
+	public youTube: boolean = true;
 }

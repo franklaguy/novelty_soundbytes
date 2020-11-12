@@ -1,19 +1,25 @@
 import { HomeComponent } from './home.component';
 import { CustomNavComponent } from '../custom-nav/custom-nav.component'
-import { FooterComponent } from '../footer/footer.component';
-import { IntroComponent } from '../intro/intro.component';
+import { SocialComponent } from '../social/social.component';
+import { GalleryComponent } from '../gallery/gallery.component';
+import { WhoComponent } from '../who-we-are/who-we-are.component';
+import { NSBServicesComponent } from '../nsb-services/nsb-services.component';
+import { ContactComponent } from '../contact/contact.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
 import { AboutComponent } from '../about/about.component';
-import { MerchandiseComponent } from '../merchandise/merchandise.component';
-import { ContactComponent } from '../contact/contact.component';
+import { WVOEComponent } from '../wvoe/wvoe.component';
+import { FooterComponent } from '../footer/footer.component';
 
 export const HOME_DECLARATIONS = [
 	HomeComponent,
 	CustomNavComponent,
+	SocialComponent,
+	GalleryComponent,
+	WhoComponent,
+	NSBServicesComponent,
+	ContactComponent,
 	FooterComponent,
-	IntroComponent,
 	SynopsisComponent,
 	AboutComponent,
-	MerchandiseComponent,
-	ContactComponent
+	WVOEComponent
 ]

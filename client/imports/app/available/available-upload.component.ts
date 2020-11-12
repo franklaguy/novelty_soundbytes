@@ -1,16 +1,17 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import template from './available-upload.component.html';
-import style from './available-upload.component.scss';
+// import style from './available-upload.component.scss';
 import { upload } from '/both/methods/images.methods';
 import { Subject, Subscription, Observable } from "rxjs";
 import { MeteorObservable } from "meteor-rxjs";
-import { Thumb } from '/both/models/image.model';
-import { Thumbs } from '/both/collections/images.collection';
+import { Thumb, Image } from '/both/models/image.model';
+import { Thumbs, Images } from '/both/collections/images.collection';
 
 @Component({
 	selector: 'available-upload',
-	template,
-	styles: [ style ]
+	// template,
+	templateUrl: require('./available-upload.component.html').default,
+	// styles: [ './available-upload.component.scss' ]
 })
 
 export class AvailableUploadComponent implements OnInit {
@@ -29,7 +30,6 @@ export class AvailableUploadComponent implements OnInit {
 			MeteorObservable.autorun().subscribe(() => {
 				if (this.thumbsSubscription) {
 					this.thumbsSubscription.unsubscribe();
-					this.thumbsSubscription = undefined;
 				}
 
 				this.thumbsSubscription = MeteorObservable.subscribe("thumbs", filesArray).subscribe(() => {
@@ -62,8 +62,8 @@ export class AvailableUploadComponent implements OnInit {
 
 	addFile(file) {
 		this.filesArray.push(file._id);
-		this.files.next(this.filesArray);
-		this.onFile.emit(file._id);
+		this.files.next(this.filesArray); 
+		this.onFile.emit(file.url);
 	}
 
 	reset() {

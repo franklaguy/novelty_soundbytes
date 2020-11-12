@@ -1,33 +1,18 @@
 @import "../colors";
+@import "../fonts";
 
 .footer {
-	width: 100%;
-	position: relative;
-  bottom: .5rem;
+	background-color: $color2;
+	margin-top: .5rem;
+	padding-top: 1rem;
 
+	a { 
+		color: $color1; 
 
-	div {
-		margin: 0 0 0 33%;
+		&:hover { color: $nsb-light; }
 	}
-}
 
-.tagline {
-	display: none;
-}
-
-@media (min-width: 992px) {
-	.footer {
-		div {
-			margin: 0 0 0 43%;
-		}
+	ul {
+		padding-bottom: 1rem;
 	}
-}
-
-/* Landscape */
-@media (min-width: 414px) 
-  and (max-width: 736px) { 
-
-  .footer {
-  	
-  }
 }

@@ -1,0 +1,67 @@
+@import '../../colors';
+@import '../../fonts';
+@import '../../backgrounds';
+
+.sponsors .nav-container, .rewind {
+	border-bottom: 1px solid #fff;
+	background-color: $color4;
+	background: url(/img/v3rewind/bg-v3.png) no-repeat center center;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+
+  .navbar-toggleable-md {
+	  padding-bottom: 20rem;
+	  padding-top: 0;
+  }
+
+  .v3-logo {
+  	padding-top: .7rem;
+  	margin-right: 4.3rem;
+  	padding-bottom: .7rem;
+  }
+}
+
+.sponsors .navbar a.nav-link.active,
+.media-view .navbar a.nav-link:hover {
+	color: $color4 !important;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:hover {
+	color: $color3;
+}
+
+ul {
+	padding-left: 0;
+}
+
+ul li {
+	color: $color2;
+	display: flex;
+	list-style: decimal;
+	list-style-color: $color2;
+  padding-bottom: .8rem;
+}
+
+li::before {
+  content: "• ";
+  color: $color2;
+  font-size: 1rem;
+  padding-right: .8rem;
+}
+
+@media (min-width: 992px) {
+	.sponsors .nav-container {
+		.v3-logo {
+			position: absolute;
+	    left: 17rem;
+	    top: 3rem;
+		}
+	}
+}

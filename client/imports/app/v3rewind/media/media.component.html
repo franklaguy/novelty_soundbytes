@@ -1,0 +1,92 @@
+<div class="container-fluid home media-view">
+	<div class="row nav-container">
+		<div class="col-md-12">
+			<v3-custom-nav></v3-custom-nav>
+	  	<img class="v3-logo" src="/img/v3rewind/VerseAtility_White-Gray.png" width="50%" alt="V3Rewind Logo" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 bg-black">
+			<p class="text-center mb-0">V3REWIND - ON SALE NOW</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-12 featured">
+			<h1 class="txt-black pt-2 text-left">Featured</h1>
+			<hr />
+			<div class="text-center">
+				<iframe width="100%" height="315" src="https://www.youtube.com/embed/EnmAG4EWPbk" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+			</div>
+			<h3 class=" text-left">Emerging Art Series: Godchild the Omen: Dictation From The Spirit</h3>
+			<p class="txt-black mb-1 text-left">Renowned in Hampton Roads &amp; beyond, spoken word artist, Godchild the Omen, discusses his background, early influences, writing process, his love for haiku &amp; more. For more of his work, go to godchildtheomen.bandcamp.com or watch him perform live at one of the numerous events he hosts in the 757.</p>
+			<p *ngIf="readLess" class="text-right txt-black">
+				<a href="//instagram.com/sportofthegods" target="_blank">
+					<img class="pull-right ml-2" src="/img/social/instagram.png" width="30" height="30" alt="Reading Incon" />
+				</a>
+				<span *ngIf="readLess" class="txt-black read-more" (click)="readMore = !readMore; readLess = !readLess">
+					<b>...read more.</b>
+					<img src="/img/icon-eyeglasses-invert.png" width="30" height="30" alt="Watch Incon" />
+				</span>
+			</p>
+			<span *ngIf="readMore">
+				<p class="txt-black">When I came across Godchild he reminded me of everything I thought about the Word of Mouth movement. Blount is proud of the work Godchild has been putting in and I'm sure it's all just natural energy. There's something to be said about a person just being himself, having talent and expressing it. Or as Rob and No Malice would say "Individual Expressionism".</p>
+				<p class="txt-black">*special thanks to the  Virginia Museum of Contemporary Arts and Peninsula Fine Arts Center</p>
+				<p class="txt-black">So I was on Long Island, watching Youtube with B and checking out all of the guys we've been working with over the years. When I play my guys sometimes I like watch the other viewers in the room a bit to get their natural reactions to certain things. The reaction to Godchilds work was pretty much what I expected it to be considering I know this was the first time B even saw anything like this. It's that, drawn in, I just figured out what this guy just said... it's not rap... but in a way it is though... Wow he just said another incredible line... look on peoples face. That's what the Omen is I think.</p>
+				<p class="txt-black">B's son is old enough to like certain stuff other than cartoons now. I peeped him on the stair case, sneaking, first amazed watching his dad be so engaged in something, then listening harder now to peep what it was. Godchild said something kind of ill and everybody kind of reacted. It was funny because that's when Payton exposed himself on some 'you supposed to be in bed' shit. He got sent to bed, really he ain't go nowhere, but yeah. Thank for the memory Godchild.</p>
+				<p class="txt-black">So yeah, check him out above or below and help us push guys like Godchild the Omen. Get into it, and support our products so we can keep going with fresh new talent, concepts and idea's. </p>
+				<p class="txt-black">Enjoy.</p>
+				<p class="txt-black">Connect with Godchild <a class="txt-black" href="//instagram.com/godchild360" target="_blank">@godchild360</a></p>
+			</span>
+			<span *ngIf="readMore" class="txt-black read-more" (click)="readMore = !readMore; readLess = !readLess">
+				<p class="text-right txt-black">
+					<a href="//instagram.com/godchild360" target="_blank">
+						<img class="pull-right ml-2" src="/img/social/instagram.png" width="30" height="30" alt="Reading Incon" />
+					</a>
+					<b>read less.</b>
+					<img src="/img/icon-eyeglasses-invert.png" width="30" height="30" alt="Watch Incon" />
+				</p>
+			</span>
+			<p>
+				<a href="http://www.virginiamoca.org/events" target="_blank">
+					<img class="mb-3" src="/img/nsb/ads/MOCA_Logo.png" height="80" alt="Virginia Museum of Contemporary Arts" />
+				</a> nbsp;
+				<a href="https://pfac-va.org/" target="_blank">
+					<img class="mb-3" src="/img/nsb/ads/pfac.png" height="80" alt="Peninsula Fine Arts Center" />
+				</a>
+				<img class="mb-3" src="/img/nsb/ads/PBS_logo.png" height="80" alt="PBS" />
+			</p>
+		</div>
+	</div>
+	<div class="row d-flex justify-content-center bg-black">
+		<div class="col-md-12 text-center">
+			<ul class="cards">
+				<li>
+					<img class="cursor" (click)="nextCard()" src="/img/catalog/what-if/what-if-{{counter}}.jpg" alt="What If card">
+					<p><b>What If?</b> - adult card game. Play now FREE!!!</p>
+					<p class="secondary">courtesy of nSb products<br />(tap card to play) (limited time)</p>
+				</li>
+				<li>
+					<img src="/img/v3rewind/cards/godchild.jpg" alt="Godchild">
+					<p>Godchild the Omen</p>
+					<p class="secondary">footage courtesy of PBS</p>
+					<img class="play-video" src="/img/v3rewind/cards/video-play-light.png" alt="Play video icon">
+					<iframe class="youtube-card" height="auto" src="https://www.youtube.com/embed/xC4K1YNz-6g" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+					<div class="pt-3"></div>
+				</li>
+				<li *ngFor="let c of cards | async">
+					<img [src]="c.card + '.jpg' | safe: 'resourceUrl'" alt="{{c.cardAltTag}}">
+					<p>{{c.title}}</p>
+					<p class="secondary">{{c.desc}}</p>
+					<img *ngIf="!c.flag" (click)="c.flag = !c.flag" class="play-video" src="/img/v3rewind/cards/video-play-light.png" alt="Play video icon">
+					<iframe *ngIf="c.flag && c.youTubeSrc" class="youtube-card" height="auto" [src]="c.youTubeSrc | safe: 'resourceUrl'" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+					<div class="pt-3">
+						<iframe *ngIf="c.soundcloudSrc" width="100%" height="20" scrolling="no" frameborder="no" [src]="c.soundcloudSrc | safe: 'resourceUrl'"></iframe>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<footer></footer>

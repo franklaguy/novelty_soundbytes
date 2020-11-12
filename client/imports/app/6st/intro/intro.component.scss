@@ -1,0 +1,32 @@
+@import '../../colors';
+
+.mast {
+	background-color: $color4;
+	background: url(/img/6st/bg.png) no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin-bottom: 1rem;
+
+  .navbar {
+  	padding-bottom: 3.5rem !important;
+  }
+}
+
+.mast {
+	@media (min-width: 992px) {
+		.title {
+			display: none;
+		}
+	}
+}
+
+.intro p {
+	color: $color2;
+	padding: .5rem 0;
+}
+
+.span-tag span {
+	color: $color2;
+}

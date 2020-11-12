@@ -1,0 +1,36 @@
+<nav class="six-strange-tales-nav navbar navbar-toggleable-md navbar-light bg-faded pull-left">
+	<div class="container-fluid">
+		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="title pull-right"></div>
+		<div class="collapse navbar-collapse" [collapse]="isCollapsed">
+	    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+	      <li class="nav-item text-shadow-white">
+	        <a class="nav-link no-hover text-shadow-white" [routerLink]="['/']">nSb <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item text-shadow-white">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/six-strange-tales/']">Six Strange Tales <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item text-shadow-white">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/six-strange-tales/introduction/']">Introduction <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item text-shadow-white">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/six-strange-tales/synopsis/']">Synopsis <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item text-shadow-white">
+	        <a [routerLinkActive]="['active']" class="nav-link" [routerLink]="['/six-strange-tales/about-the-author/']">About the Author <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item text-shadow-white">
+	        <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/list/']">Buy 6ST Now</a>
+	      </li>
+	    </ul>
+
+	    <span id="search" class="form-inline my-2 my-lg-0">
+				<input #searchtext class="form-control pull-right" type="text" placeholder="Search catalog">
+	      <button class="btn btn-outline-success pull-right" type="button" (click)="search(searchtext.value)">Search</button>
+	    </span>
+	    
+	  </div>
+	</div>
+</nav>

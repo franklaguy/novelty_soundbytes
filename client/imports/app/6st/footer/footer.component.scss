@@ -1,0 +1,17 @@
+@import "../../colors";
+
+.footer {
+	width: 100%;
+	position: relative;
+  bottom: .5rem;
+}
+
+.tagline {
+	display: block;
+}
+
+@media (min-width: 992px) {
+	a.twitter-mention-button img {
+		margin-left: 43%;
+	}
+}

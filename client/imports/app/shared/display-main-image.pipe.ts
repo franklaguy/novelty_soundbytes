@@ -16,9 +16,11 @@ export class DisplayMainImagePipe implements PipeTransform {
 				imageId: string = (availableModel.images || [])[0];
 
 		const found = Images.findOne(imageId);
-		
+	 
 		if (found) {
 			imageUrl = found.url;
+		} else {
+			 imageUrl = imageId; 
 		}
 
 		return imageUrl;
