@@ -1,14 +1,9 @@
-# Angular9-Meteor Boilerplate
-
-[![bitHound Overall Score](https://www.bithound.io/github/Urigo/angular2-meteor-base/badges/score.svg)](https://www.bithound.io/github/Urigo/angular2-meteor-base) [![bitHound Dependencies](https://www.bithound.io/github/Urigo/angular2-meteor-base/badges/dependencies.svg)](https://www.bithound.io/github/Urigo/angular2-meteor-base/master/dependencies/npm)
-
-
 ## Usage
 
-Since Meteor v1.4 you can use one command to create a working Angular2 app based on this boilerplate:
+Since Meteor v1.11 you can use one command to create a working Angular 9 app based on this boilerplate:
 
 ```
-meteor create --example angular2-boilerplate
+meteor create --example angular9
 ```
 
 ## NPM Scripts
@@ -25,14 +20,14 @@ This boilerplate comes with predefined NPM scripts, defined in `package.json`:
 
 ## Boilerplate Contents
 
-This boilerplate contains the basics that requires to quick start with Angular2-Meteor application.
+This boilerplate contains the basics that requires to quick start with Angular9-Meteor application.
 
 This package contains:
 
-- TypeScript support (with `@types`) and Angular 2 compilers for Meteor
-- Angular2-Meteor
-- Angular 2 (core, common, compiler, platform, router, forms)
-- SASS, LESS, CSS support (Also support styles encapsulation for Angular 2)
+- TypeScript support (with `@types`) and Angular 9 compilers for Meteor
+- Angular9-Meteor
+- Angular 9 (core, common, compiler, platform, router, forms)
+- SASS, LESS, CSS support (Also support styles encapsulation for Angular 9)
 - Testing framework with Mocha and Chai
 - [Meteor-RxJS](http://angular-meteor.com/meteor-rxjs/) support and usage
 
@@ -47,11 +42,11 @@ The Main component loads the child component, which uses the demo service that g
 
 ### Folder Structure
 
-The folder structure is a mix between [Angular 2 recommendation](https://johnpapa.net/angular-2-styles/) and [Meteor 1.3 recommendation](https://guide.meteor.com/structure.html).
+The folder structure is a mix between [Angular 9 recommendation](https://johnpapa.net/angular-2-styles/) and [Meteor 1.3 recommendation](https://guide.meteor.com/structure.html).
 
 ### Client
 
-The `client` folder contains single TypeScript (`.ts`) file which is the main file (`/client/app.component.ts`), and bootstrap's the Angular 2 application.
+The `client` folder contains single TypeScript (`.ts`) file which is the main file (`/client/app.component.ts`), and bootstrap's the Angular 9 application.
 
 The main component uses HTML template and SASS file.
 
@@ -74,9 +69,9 @@ Example for common files in our app, is the MongoDB collection we create - it lo
 
 The testing environment in this boilerplate based on [Meteor recommendation](https://guide.meteor.com/testing.html), and uses Mocha as testing framework along with Chai for assertion.
 
-There is a main test file that initialize Angular 2 tests library, it located under `/client/init.test.ts`.
+There is a main test file that initialize Angular 9 tests library, it located under `/client/init.test.ts`.
 
 All other test files are located near the component/service it tests, with the `.test.ts` extension.
 
-The `DemoComponent` contains example for Angular 2 tests for Component, and in the server side there is an example for testing Meteor collections and stub data.
+The `DemoComponent` contains example for Angular 9 tests for Component, and in the server side there is an example for testing Meteor collections and stub data.
 # novelty_soundbytes
