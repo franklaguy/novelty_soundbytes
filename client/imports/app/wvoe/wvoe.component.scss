@@ -24,6 +24,7 @@
 
 	ul.formats li {
 		padding-right: 1rem;
+		padding-bottom: 0;
 
 		&::before {
 			content: "\272D" !important;

@@ -52,6 +52,7 @@ export class WVOEComponent implements OnInit {
 				"state": "PA",
 				"county": "North Philly",
 				"zip": "19132",
+				"radius": "",
 				"request_line": "215-763-WJYN",
 				"phone": "(215) 236-1878",
 				"email": "uptownradio985fm@gmail.com​",
@@ -81,6 +82,7 @@ export class WVOEComponent implements OnInit {
 				"state": "Georgia",
 				"county": "Sweet Auburn",
 				"zip": "30312",
+				"radius": "",
 				"request_line": "",
 				"phone": "(404) 518-2887",
 				"email": "madamcjwalkermuseum@gmail.com",
@@ -105,6 +107,7 @@ export class WVOEComponent implements OnInit {
 				"state": "NC",
 				"county": "Columbus County",
 				"zip": "28431",
+				"radius": "",
 				"request_line": "(910) 654-5621",
 				"phone": "(910) 654-5621",
 				"email": "wvoe1590radio@yahoo.com",
@@ -125,19 +128,21 @@ export class WVOEComponent implements OnInit {
 									<p><i>Longest running African American owned Radio Station</i></p>
 									<p>1528 Old 74, Chadbourn, NC, Columbus County, 28431</p>
 									<p><b>Owner:</b> Lester J. Frink, CEO of Ebony Enterprise</p>
-									<ul class="formats pt-3">
+									<hr />
+									<ul class="formats">
 										<li><b>WIKI:</b> <a href="https://en.wikipedia.org/wiki/WVOE" target="_blank">WVOE Wikipedia</a></li>
 										<li><b>Website:</b> <a href="/wvoe/" target="_blank">WVOE</a></li>
 										<li><b>Request line:</b> (910).654.5621</li>
 										<li><b>Email:</b> wvoe1590radio@yahoo.com</li>
 										<li><b>Format:</b> Gospel, Soul</li>
 									</ul>
-									<p class="pt-2">'WVOE: the Voice of Ebony' documentary film is about the North Carolina radio station
+									<hr />
+									<p>'WVOE: the Voice of Ebony' documentary film is about the North Carolina radio station
 									and other African American owned radio stations POV. WVOE, owned by Ebony Enterprises,
 									is the longest running African American owned radio station in the United States.
 									Tune in and get to know WVOE on facebook live. Call in, tune in, find out more. WVOE
-									goes live in Columbus County, North Carolina.</p>
-									<ul class="formats pt-3">
+									goes live in Columbus County, North Carolina.</p><hr />
+									<ul class="formats">
 										<li><b>Facebook:</b> <a href="hhttps://www.facebook.com/WVOE1590AM-136983856405500" target="_blank">WVOE FB</a></li>
 										<li><b>Youtube:</b> <a href="https://youtu.be/o793zqZMomg" target="_blank">WVOE YouTube</a></li>
 										<li><b>Instagram:</b> <a href="https://www.instagram.com/novelty_soundbytes/" target="_blank">WVOE IG</a></li>
@@ -154,16 +159,16 @@ export class WVOEComponent implements OnInit {
 															  	+'<p>'+this.data.address+', '
 															  	+this.data.city+', '+this.data.state+', '
 															  	+this.data.county+', '+this.data.zip+'</p>'
-															  	+'<p><b>Owner:</b> '+this.data.owner+'</p>'
-															  	+'<ul class="formats pt-3">'
+															  	+'<p><b>Owner:</b> '+this.data.owner+'</p><hr />'
+															  	+'<ul class="formats">'
 																	+'<li><b>WIKI:</b> <a href="'+this.data.wiki+'" target="_blank">'+this.data.call_letters+' Wikipedia</a></li>'
 																	+'<li><b>Website:</b> <a href="'+this.data.url+'" target="_blank">'+this.data.call_letters+'</a></li>'
 																	+'<li><b>Request line:</b> '+this.data.request_line+'</li>'
 																	+'<li><b>Email:</b> '+this.data.email+'</li>'
 																	+'<li><b>Format:</b> '+this.data.format+'</li>'
-																	+'</ul>'
-															  	+'<p class="pt-2">'+this.data.note+'</p>'
-																	+'<ul class="formats pt-3">'
+																	+'</ul><hr />'
+															  	+'<p>'+this.data.note+'</p><hr />'
+																	+'<ul class="formats">'
 																	+'<li><b>Facebook:</b> <a href="'+this.data.facebook+'" target="_blank">'+this.data.call_letters+' FB</a></li>'
 																	+'<li><b>Youtube:</b> <a href="'+this.data.youtube+'" target="_blank">'+this.data.call_letters+' YouTube</a></li>'
 																	+'<li><b>Instagram:</b> <a href="'+this.data.instagram+'" target="_blank">'+this.data.call_letters+' IG</a></li>'
@@ -172,6 +177,7 @@ export class WVOEComponent implements OnInit {
 															  document.getElementById("blurb").innerHTML = this.blurb;
 															})
 														 .addTo(this.wvoemap);
+
 			this.wvoemarker.bindPopup(this.arr[i]["blurb"]).openPopup();
 		}
 	}
