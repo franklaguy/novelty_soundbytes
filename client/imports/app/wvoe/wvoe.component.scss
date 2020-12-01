@@ -3,8 +3,8 @@
 		background: url(img/wvoe/banner-2048x1152.jpg) no-repeat center center;
 		background-size: cover;
 
-		a {
-			color: $nsb-light;
+		a, .nav-item a.nav-link {
+			color: $nsb-light !important;
 
 			&.visuals {
 				background: url(/img/icon-eyeglasses-invert.png) no-repeat;
@@ -20,6 +20,15 @@
 				padding-left: 3.3rem;
 			}
 		}
+
+		.nav-item a.nav-link:hover {
+			color: $nsb-dark !important;
+		}
+	}
+
+	.navbar-toggleable-md .navbar-collapse {
+		z-index: 2;
+		margin-top: 3.3em;
 	}
 
 	ul.formats li {
@@ -36,33 +45,85 @@
 		margin-bottom: 0;
 	}
 
-	#wvoemapid { 
+	#wvoemapid, #ccMapid { 
 		height: 23rem; 
 		width: 75%;
 		margin: 2rem auto;
+		z-index: 1;
 	}
 }
 
-@media (min-width: 900px) {
+@media only screen and (max-width: 992px) and (min-width: 500px)  {
 	.wvoe {
-		.navbar-toggleable-md {
-		    padding-top: 12rem;
-		}
-	}
-}
-
-@media (min-width: 992px) {
-	.wvoe {
-		.navbar-toggleable-md .navbar-collapse  {
-		    margin-top: 3.3rem;
+		h4 {
+		    font-size: 2.8vh;
 		}
 
-		.navbar a.nav-link {
-			color: $color2 !important;
+		.navbar span#search {
+			margin-bottom: 0 !important;
 
-			&:hover {
-				color: $nsb-light !important;
+			input, button {
+				margin-top: .5rem !important;
 			}
 		}
+
+		.navbar-toggleable-md .navbar-collapse {
+			z-index: 2;
+			margin-top: 29.5em;
+		}
+
+		.row.content.mt-3.pt-3 {
+			margin-top: 0 !important;
+			padding-top: 0 !important;
+		}
+	}
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+	.wvoe {
+	  .navbar-toggleable-md .navbar-collapse {
+			margin-top: 14.5em;
+		}
+	}
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+	.wvoe {
+	  .navbar-toggleable-md .navbar-collapse {
+			margin-top: 14.5em;
+		}
+
+		.row.content.mt-3.pt-3 {
+			margin-top: 0 !important;
+			padding-top: 0 !important;
+		}
+
+		.nav-container {
+			height: 6.5rem;
+		}
+
+		.navbar span#search {
+			margin-bottom: 0 !important;
+
+			input, button {
+				margin-top: .5rem !important;
+			}
+		}
+	}
+}
+
+@supports (-webkit-appearance:none) {
+.wvoe {
+	  .navbar-toggleable-md .navbar-collapse {
+			
+		} 
 	}
 }

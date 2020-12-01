@@ -12,14 +12,10 @@ import { AvailableModel } from '/both/models/available.model';
 import { Users } from '/both/collections/users.collection';
 import { User } from '/both/models/user.model';
 import { CanActivate } from '@angular/router'; // POC: currently not using
-import template from './available-details.component.html';
-// import style from './available-list.component.scss';
 
 @Component({
 	selector: 'available-details',
-	// template,
 	templateUrl: require('./available-details.component.html').default,
-  // styles: [ './available-list.component.scss' ]
 })
 
 @InjectUser('user')

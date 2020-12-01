@@ -4,6 +4,7 @@
 /// <reference types="@types/chai" />
 /// <reference types="@types/mocha" />
 /// <reference types="@types/node" />
+/// <reference types="chrome"/>
 
 declare module "*.html" {
   const template: string;

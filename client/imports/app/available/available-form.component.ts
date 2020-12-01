@@ -2,14 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Available } from '/both/collections/available.collection';
 import { Meteor } from 'meteor/meteor';
-import template from './available-form.component.html';
-// import style from './available-form.component.scss';
 
 @Component({
 	selector: 'available-form',
-	// template,
 	templateUrl: require('./available-form.component.html').default,
-	// styles: [ './available-form.component.scss' ]
 })
 
 export class AvailableFormComponent implements OnInit {

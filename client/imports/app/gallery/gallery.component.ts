@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { MeteorObservable } from 'meteor-rxjs';
 import { Gallery } from '/both/collections/gallery.collection';
 import { GalleryModel } from '/both/models/gallery.model';
-import template from './gallery.component.html';
 
 @Component({
 	selector: 'gallery',

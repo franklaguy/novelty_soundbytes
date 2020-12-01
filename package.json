@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@types/chai": "3.4.34",
+    "@types/chrome": "0.0.126",
     "@types/meteor": "^1.4.49",
     "@types/mocha": "2.2.34",
     "chai": "3.5.0",

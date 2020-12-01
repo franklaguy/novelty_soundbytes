@@ -1,6 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import template from './available-upload.component.html';
-// import style from './available-upload.component.scss';
 import { upload } from '/both/methods/images.methods';
 import { Subject, Subscription, Observable } from "rxjs";
 import { MeteorObservable } from "meteor-rxjs";
@@ -9,9 +7,7 @@ import { Thumbs, Images } from '/both/collections/images.collection';
 
 @Component({
 	selector: 'available-upload',
-	// template,
 	templateUrl: require('./available-upload.component.html').default,
-	// styles: [ './available-upload.component.scss' ]
 })
 
 export class AvailableUploadComponent implements OnInit {

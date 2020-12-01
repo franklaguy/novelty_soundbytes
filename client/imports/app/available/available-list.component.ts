@@ -9,8 +9,6 @@ import { InjectUser } from 'angular2-meteor-accounts-ui';
 import 'rxjs/add/operator/combineLatest';
 import { Available } from '/both/collections/available.collection';
 import { AvailableModel } from '/both/models/available.model';
-import template from './available-list.component.html';
-// import style from './available-list.component.scss';
 
 interface Pagination {
 	limit: number;
@@ -23,9 +21,7 @@ interface Options extends Pagination {
 
 @Component({
 	selector: 'available-list',
-	// template,
 	templateUrl: require('./available-list.component.html').default,
-  // styles: [ './available-list.component.scss' ]
 })
 
 @InjectUser('user')

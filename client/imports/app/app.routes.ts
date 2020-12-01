@@ -28,6 +28,7 @@ import { V3MediaComponent } from './v3rewind/media/media.component';
 
 // WVOE
 import { WVOEComponent } from './wvoe/wvoe.component';
+import { CCComponent } from './wvoe/chitlin-circuit/chitlin-circuit.component';
 
 export const routes: Route[] = [
 	{ path: 'login', component: LoginComponent },
@@ -56,7 +57,8 @@ export const routes: Route[] = [
 	{ path: 'v3rewind/media', component: V3MediaComponent },
 
 	// WVOE
-	{ path: 'wvoe', component: WVOEComponent }
+	{ path: 'wvoe', component: WVOEComponent },
+	{ path: 'wvoe/chitlin-circuit', component: CCComponent }
 ];
 
 export const ROUTES_PROVIDERS = [{
