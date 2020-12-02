@@ -108,6 +108,12 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.v3rewind.home .navbar-toggleable-md .navbar-collapse {
+		margin-top: 32rem;
+	}
+}
+
 @media (min-width: 992px) {
 	.v3rewind.home {
 
@@ -125,10 +131,6 @@
 		    top: 3rem;
 			}
 		}
-	}
-
-	.v3rewind .navbar-toggleable-md .navbar-collapse {
-		margin-top: 1.5rem;
 	}
 
 	.v3rewind .navbar a.nav-link.active {

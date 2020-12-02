@@ -38,7 +38,7 @@
 	  -moz-background-size: contain;
 	  -o-background-size: contain;
 	  background-size: contain;
-	  margin-left:10px;
+	  margin-left:10px;margin-top: 1.3rem;
 	}
 
 	.btn-outline-success {
@@ -51,6 +51,11 @@
 
 	  .form-control {
 	    width: 70%;
+	    margin-bottom: -.5rem;
+	  }
+
+	  button {
+	    margin-bottom: -.5rem;
 	  }
 
 	  button:hover {
@@ -71,7 +76,6 @@
 	}
 
 	.navbar-nav .nav-link {
-		padding-left: 0;
 		padding-right: 1rem ;
 	}
 
@@ -120,10 +124,23 @@
 			a.nav-link:hover {
 			  background: none;
 			}
+
+			.navbar-nav .nav-link {
+				padding-left: 0;
+				padding-right: 1rem ;
+			}
 		}
 	}
 
 	.six-strange-tales-common.mast .navbar-toggleable-md .navbar-collapse {
-		margin-top: 4rem !important;
+		margin-top: 4rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.six-strange-tales-nav.navbar-toggleable-md {
+		.navbar-collapse {
+			padding-left: 0;
+		}
 	}
 }
