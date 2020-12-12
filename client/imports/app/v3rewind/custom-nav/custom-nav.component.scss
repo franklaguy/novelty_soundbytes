@@ -275,6 +275,20 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.v3rewind {
+		.navbar span#search {
+			height: 3.3rem;
+		}
+	}
+
+	.media-view, .press, .sponsors {
+		.navbar span#search {
+			height: 2rem;
+		}
+	}
+}
+
 @media (min-width: 400px) {
 	.v3rewind.navbar-toggleable-md {
 		padding-top: 2rem;

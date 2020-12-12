@@ -34,11 +34,11 @@ export class WVOEComponent implements OnInit {
 			this.wvoe_map = WVOEMap.find({}).zone();
 		});
 
-		this.wvoemap = L.map('wvoemapid').setView([38.24, -85.19], 5); 
+		this.wvoemap = L.map('wvoemapid').setView([38.24, -85.19], 6); 
 
 		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	    attribution: 'NSB',
-	    maxZoom: 18,
+	    maxZoom: 17,
 	    id: 'mapbox/light-v10',
 	    tileSize: 512,
 	    zoomOffset: -1,
@@ -49,9 +49,9 @@ export class WVOEComponent implements OnInit {
 
 		this.wvoeIcon = L.icon({
 		    iconUrl: 			'img/wvoe/radio-antenna.png',
-		    iconSize:     [30, 60], // size of the icon
+		    iconSize:     [30, 40], // size of the icon
 		    iconAnchor:   [22, 40], // point of the icon which will correspond to marker's location
-		    shadowAnchor: [4, 60],  // the same for the shadow
+		    shadowAnchor: [4, 40],  // the same for the shadow
 		    popupAnchor:  [-2, -36] // point from which the popup should open relative to the iconAnchor
 		});
 
@@ -69,6 +69,7 @@ export class WVOEComponent implements OnInit {
 										<li><b>Format:</b> Gospel, Soul</li>
 									</ul>
 									<hr />
+									<p><b>Snapple Facts:</b></p>
 									<p>'WVOE: the Voice of Ebony' documentary film is about the North Carolina radio station
 									and other African American owned radio stations POV. WVOE, owned by Ebony Enterprises,
 									is the longest running African American owned radio station in the United States.
@@ -105,6 +106,7 @@ export class WVOEComponent implements OnInit {
 								+'<li><b>Email:</b> '+this.data.email+'</li>'
 								+'<li><b>Format:</b> '+this.data.format+'</li>'
 								+'</ul><hr />'
+								+'<p><b>Snapple Facts:</b></p>'
 						  	+'<p>'+this.data.note+'</p><hr />'
 								+'<ul class="formats">'
 								+'<li><b>Facebook:</b> <a href="'+this.data.facebook+'" target="_blank">'+this.data.call_letters+' FB</a></li>'
